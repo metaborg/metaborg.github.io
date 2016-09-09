@@ -114,4 +114,4 @@ where `pattern` matches a conditional with at least two questions, while `patter
 
 When you build your project, you can test your normalization by selecting **Show normalized** from the **Syntax** menu of the QL editor.
 
-Next, you specify semantic analyses for QL.
+[Next](/spoofax/tutorials/ql/08-analysis), you specify semantic analyses for QL.
