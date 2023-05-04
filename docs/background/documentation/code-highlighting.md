@@ -44,12 +44,12 @@ Additionally, in this Spoofax documentation these [Spoofax languages](https://gi
 
 | Short name    | Language                                         |
 | ------------- | ------------------------------------------------ |
-| `aterm`       | [ATerms](../../references/stratego/terms.md).    |
+| `aterm`       | [ATerms](../../reference/stratego/terms.md).    |
 | `dynsem`      | DynSem.                                          |
-| `esv`         | [ESV](../../references/editor-services/esv.md).  |
-| `flowspec`    | [FlowSpec](../../references/flowspec/index.md).  |
+| `esv`         | [ESV](../../reference/editor-services/esv.md).  |
+| `flowspec`    | [FlowSpec](../../reference/flowspec/index.md).  |
 | `nabl`        | NaBL.                                            |
 | `nabl2`       | NaBL2.                                           |
-| `sdf3`        | [SDF3](../../references/syntax/index.md).        |
-| `statix`      | [Statix](../../references/statix/index.md).      |
-| `stratego`    | [Stratego](../../references/stratego/index.md).  |
+| `sdf3`        | [SDF3](../../reference/syntax/index.md).        |
+| `statix`      | [Statix](../../reference/statix/index.md).      |
+| `stratego`    | [Stratego](../../reference/stratego/index.md).  |

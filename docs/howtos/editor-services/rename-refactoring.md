@@ -37,7 +37,7 @@ rules
 ```
 
 ## Menu Action
-The rename refactoring is triggered from an entry in the Spoofax menu. To add it to an existing project a menu like the following can be implemented in an [ESV file](../../references/editor-services/esv.md):
+The rename refactoring is triggered from an entry in the Spoofax menu. To add it to an existing project a menu like the following can be implemented in an [ESV file](../../reference/editor-services/esv.md):
 
 ```esv
 module Refactoring
@@ -51,4 +51,4 @@ menus
 - Reference: [Rename Refactoring][1]
 
 
-[1]: ../../references/editor-services/renaming.md
+[1]: ../../reference/editor-services/renaming.md

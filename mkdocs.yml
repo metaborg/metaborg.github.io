@@ -55,85 +55,85 @@ nav:
       - howtos/development/publish-spoofax.md
       - howtos/development/troubleshooting.md
       - howtos/development/custom-configuration.md
-  - References:
-    - references/index.md
+  - Reference:
+    - reference/index.md
     - Configuration:
-      - references/config/index.md
-      - references/config/language.md
-      - references/config/project.md
+      - reference/config/index.md
+      - reference/config/language.md
+      - reference/config/project.md
     - Syntax:
-      - references/syntax/index.md
-      - references/syntax/modules.md
-      - references/syntax/symbols.md
-      - references/syntax/productions.md
-      - references/syntax/lexical-syntax.md
-      - references/syntax/context-free-syntax.md
-      - references/syntax/kernel-syntax.md
-      - references/syntax/start-symbols.md
-      - references/syntax/templates.md
-      - references/syntax/disambiguation.md
-      - references/syntax/layout-sensitivity.md
-      - references/syntax/recovery.md
-      - references/syntax/configuration.md
+      - reference/syntax/index.md
+      - reference/syntax/modules.md
+      - reference/syntax/symbols.md
+      - reference/syntax/productions.md
+      - reference/syntax/lexical-syntax.md
+      - reference/syntax/context-free-syntax.md
+      - reference/syntax/kernel-syntax.md
+      - reference/syntax/start-symbols.md
+      - reference/syntax/templates.md
+      - reference/syntax/disambiguation.md
+      - reference/syntax/layout-sensitivity.md
+      - reference/syntax/recovery.md
+      - reference/syntax/configuration.md
     - Terms:
-      - references/terms/index.md
-      - references/terms/text-format.md
+      - reference/terms/index.md
+      - reference/terms/text-format.md
     - Static Semantics:
-      - references/statix/index.md
-      - references/statix/concepts.md
-      - references/statix/modules.md
-      - references/statix/terms.md
-      - references/statix/basic-constraints.md
-      - references/statix/rules.md
-      - references/statix/scope-graphs.md
-      - references/statix/queries.md
-      - references/statix/tests.md
-      - references/statix/stratego-api.md
+      - reference/statix/index.md
+      - reference/statix/concepts.md
+      - reference/statix/modules.md
+      - reference/statix/terms.md
+      - reference/statix/basic-constraints.md
+      - reference/statix/rules.md
+      - reference/statix/scope-graphs.md
+      - reference/statix/queries.md
+      - reference/statix/tests.md
+      - reference/statix/stratego-api.md
     - Data Flow Analysis:
-      - references/flowspec/index.md
-      - references/flowspec/structure.md
-      - references/flowspec/Stratego_API.md
-      - references/flowspec/configuration.md
-      - references/flowspec/testing.md
-      - references/flowspec/references.md
+      - reference/flowspec/index.md
+      - reference/flowspec/structure.md
+      - reference/flowspec/Stratego_API.md
+      - reference/flowspec/configuration.md
+      - reference/flowspec/testing.md
+      - reference/flowspec/references.md
     - Transformation:
-      - references/stratego/index.md
-      - references/stratego/lexical.md
-      - references/stratego/modules.md
-      - references/stratego/terms.md
-      - references/stratego/types.md
-      - references/stratego/rewrite-rules.md
-      - references/stratego/strategy-definitions.md
-      - references/stratego/strategy-combinators.md
-      - references/stratego/dynamic-rules.md
-      - Troubleshooting: references/stratego/troubleshooting.md
+      - reference/stratego/index.md
+      - reference/stratego/lexical.md
+      - reference/stratego/modules.md
+      - reference/stratego/terms.md
+      - reference/stratego/types.md
+      - reference/stratego/rewrite-rules.md
+      - reference/stratego/strategy-definitions.md
+      - reference/stratego/strategy-combinators.md
+      - reference/stratego/dynamic-rules.md
+      - Troubleshooting: reference/stratego/troubleshooting.md
     - Testing:
-      - references/testing/index.md
-      - references/testing/test-suites.md
-      - references/testing/test-expectations.md
-      - references/testing/running-tests.md
+      - reference/testing/index.md
+      - reference/testing/test-suites.md
+      - reference/testing/test-expectations.md
+      - reference/testing/running-tests.md
     - Editor Services:
-      - references/editor-services/index.md
-      - references/editor-services/esv.md
-      - references/editor-services/analysis.md
-      - references/editor-services/file-extensions.md
-      - references/editor-services/hover.md
-      - references/editor-services/menus.md
-      - references/editor-services/on-save.md
-      - references/editor-services/outline.md
-      - references/editor-services/parsing.md
-      - references/editor-services/reference-resolution.md
-      - references/editor-services/renaming.md
-      - references/editor-services/stratego.md
-      - references/editor-services/syntax-highlighting.md
+      - reference/editor-services/index.md
+      - reference/editor-services/esv.md
+      - reference/editor-services/analysis.md
+      - reference/editor-services/file-extensions.md
+      - reference/editor-services/hover.md
+      - reference/editor-services/menus.md
+      - reference/editor-services/on-save.md
+      - reference/editor-services/outline.md
+      - reference/editor-services/parsing.md
+      - reference/editor-services/reference-resolution.md
+      - reference/editor-services/renaming.md
+      - reference/editor-services/stratego.md
+      - reference/editor-services/syntax-highlighting.md
     - Pipelines:
-      - references/pipelines/index.md
-      - references/pipelines/modules.md
-      - references/pipelines/types.md
-      - references/pipelines/generics.md
-      - references/pipelines/functions.md
-      - references/pipelines/expressions.md
-      - references/pipelines/limitations.md
+      - reference/pipelines/index.md
+      - reference/pipelines/modules.md
+      - reference/pipelines/types.md
+      - reference/pipelines/generics.md
+      - reference/pipelines/functions.md
+      - reference/pipelines/expressions.md
+      - reference/pipelines/limitations.md
   - Background:
     - background/index.md
     - Bibliography:

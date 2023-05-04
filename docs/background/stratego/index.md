@@ -14,7 +14,7 @@ This section reviews the classic definition of term rewriting and motivates the 
 ## Strategy Combinators
 
 Rather than defining high-level strategies as primitives, Stratego provides basic strategies combinators for composing strategies.
-The [section](../../references/stratego/strategy-combinators.md) in the reference manual provides a definition of all the combinators.
+The [section](../../reference/stratego/strategy-combinators.md) in the reference manual provides a definition of all the combinators.
 Here we expand that description with many examples.
 
 - [Sequential combinators](strategy-combinators/sequential.md)

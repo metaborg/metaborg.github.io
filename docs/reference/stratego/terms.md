@@ -182,6 +182,6 @@ In the future, we want to support qualified names.
 Terms in Stratego are inspired by terms in the *Annotated Term Format*, or *ATerms* for short[@BrandJKO00].
 The ATerm format provides a set of constructs for representing trees, comparable to XML or abstract data types in functional programming languages.
 
-See also: [ATerms reference](../../../references/terms/)
+See also: [ATerms reference](../../../reference/terms/)
 
 \bibliography

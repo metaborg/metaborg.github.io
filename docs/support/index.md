@@ -5,7 +5,7 @@ Spoofax is developed by the [TU Delft Programming Languages group][1]. We do our
 
 
 #### :fontawesome-solid-circle-question:&nbsp; I have a question
-The search functionality of this documentation should bring you right to a relevant [How-to](../howtos/index.md) or [Reference](../references/index.md) page.
+The search functionality of this documentation should bring you right to a relevant [How-to](../howtos/index.md) or [Reference](../reference/index.md) page.
 
 If this doesn't answer your question, please join us in the [SLDE/#spoofax-users](https://slde.slack.com/archives/C7254SF60) Slack channel and ask your question there. To get access, drop [us](https://eelcovisser.org/) a line.
 
