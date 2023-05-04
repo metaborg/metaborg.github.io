@@ -78,7 +78,7 @@ nav:
     - Terms:
       - reference/terms/index.md
       - reference/terms/text-format.md
-    - Static Semantics:
+    - Statix:
       - reference/statix/index.md
       - reference/statix/concepts.md
       - reference/statix/modules.md
@@ -89,14 +89,14 @@ nav:
       - reference/statix/queries.md
       - reference/statix/tests.md
       - reference/statix/stratego-api.md
-    - Data Flow Analysis:
+    - Flow Spec:
       - reference/flowspec/index.md
       - reference/flowspec/structure.md
       - reference/flowspec/Stratego_API.md
       - reference/flowspec/configuration.md
       - reference/flowspec/testing.md
       - reference/flowspec/references.md
-    - Transformation:
+    - Stratego:
       - reference/stratego/index.md
       - reference/stratego/lexical.md
       - reference/stratego/modules.md
