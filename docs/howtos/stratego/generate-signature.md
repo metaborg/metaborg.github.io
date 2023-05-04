@@ -6,7 +6,7 @@ Therefore, Spoofax automatically generates a signature from a syntax definition 
 
 ## Write a Syntax Definition
 
-In the `/syntax/` directory in your language project for language `lang` write a syntax definition in file `lang.sdf3`.
+In the `/sdf3/` directory in your language project for language `lang` write a syntax definition in file `lang.sdf3`.
 
 Possibly write additional syntax defininitions modules and import the in `lang.sdf3`.
 

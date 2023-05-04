@@ -5,7 +5,7 @@ SDF3 is the meta-language in Spoofax for syntax definition.
 A syntax definition is structured as a collection of [modules](modules/), which may import each other.
 
 [Symbols](symbols/) are the building blocks of [productions](productions/).
-Productions are defined for [lexical](lexical-syntax/), [context-free](context-free-syntax/), or [kernel](kernel-syntax/) syntax.
+Productions are defined for [lexical](lexical-sdf3/), [context-free](context-free-sdf3/), or [kernel](kernel-sdf3/) syntax.
 
 [Start symbols](start-symbols/) indicate the entry point of a syntax definition.
 

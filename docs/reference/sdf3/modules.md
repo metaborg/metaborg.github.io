@@ -29,9 +29,9 @@ Note that SDF3 does not support parameterized modules.
 An SDF3 module may constitute of zero or more sections. All sections contribute to the final grammar that defines a language:
 
  - `sorts`, `lexical sorts`, `context-free sorts` (see [Symbols#Sorts](../symbols/#sorts))
- - `lexical syntax` (see [Lexical Syntax](../lexical-syntax/))
- - `context-free syntax` (see [Context-Free Syntax](../context-free-syntax/))
- - `syntax` (see [Kernel Syntax](../kernel-syntax/))
+ - `lexical syntax` (see [Lexical Syntax](../lexical-sdf3/))
+ - `context-free syntax` (see [Context-Free Syntax](../context-free-sdf3/))
+ - `syntax` (see [Kernel Syntax](../kernel-sdf3/))
  - `lexical start-symbols`, `context-free start-symbols`, `start-symbols` (see [Start Symbols](../start-symbols/))
  - `context-free priorities`, `priorities` (see [Disambiguation](../disambiguation/))
  - `template options` (see [Templates](../templates/))

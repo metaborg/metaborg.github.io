@@ -61,20 +61,20 @@ nav:
       - reference/config/index.md
       - reference/config/language.md
       - reference/config/project.md
-    - Syntax:
-      - reference/syntax/index.md
-      - reference/syntax/modules.md
-      - reference/syntax/symbols.md
-      - reference/syntax/productions.md
-      - reference/syntax/lexical-syntax.md
-      - reference/syntax/context-free-syntax.md
-      - reference/syntax/kernel-syntax.md
-      - reference/syntax/start-symbols.md
-      - reference/syntax/templates.md
-      - reference/syntax/disambiguation.md
-      - reference/syntax/layout-sensitivity.md
-      - reference/syntax/recovery.md
-      - reference/syntax/configuration.md
+    - SDF3:
+      - reference/sdf3/index.md
+      - reference/sdf3/modules.md
+      - reference/sdf3/symbols.md
+      - reference/sdf3/productions.md
+      - reference/sdf3/lexical-syntax.md
+      - reference/sdf3/context-free-syntax.md
+      - reference/sdf3/kernel-syntax.md
+      - reference/sdf3/start-symbols.md
+      - reference/sdf3/templates.md
+      - reference/sdf3/disambiguation.md
+      - reference/sdf3/layout-sensitivity.md
+      - reference/sdf3/recovery.md
+      - reference/sdf3/configuration.md
     - Terms:
       - reference/terms/index.md
       - reference/terms/text-format.md

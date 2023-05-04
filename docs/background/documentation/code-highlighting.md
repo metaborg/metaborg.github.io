@@ -50,6 +50,6 @@ Additionally, in this Spoofax documentation these [Spoofax languages](https://gi
 | `flowspec`    | [FlowSpec](../../reference/flowspec/index.md).  |
 | `nabl`        | NaBL.                                            |
 | `nabl2`       | NaBL2.                                           |
-| `sdf3`        | [SDF3](../../reference/syntax/index.md).        |
+| `sdf3`        | [SDF3](../../reference/sdf3/index.md).        |
 | `statix`      | [Statix](../../reference/statix/index.md).      |
 | `stratego`    | [Stratego](../../reference/stratego/index.md).  |

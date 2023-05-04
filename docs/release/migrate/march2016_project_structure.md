@@ -8,8 +8,8 @@ To clean up the structure of a language specification project, we've made the fo
 * SDF
     * The RTG and signatures files are no longer generated for SDF3 projects, since SDF3 generates its own signatures.
     * The generated box pp files are no longer generated, and box pp files are no longer converted into pp.af files.
-    * Definition: <span class='file'>src-gen/syntax/[LanguageName].def</span>
-    * Permissive definition: <span class='file'>src-gen/syntax/[LanguageName]-permissive.def</span>
+    * Definition: <span class='file'>src-gen/sdf3/[LanguageName].def</span>
+    * Permissive definition: <span class='file'>src-gen/sdf3/[LanguageName]-permissive.def</span>
     * Parenthesizer: <span class='file'>src-gen/pp/[LanguageName]-parenthesize.str</span>
     * Parse table: <span class='file'>target/metaborg/sdf.tbl</span>
 * Stratego

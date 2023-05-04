@@ -172,7 +172,7 @@ Clean or build fails with an error such as this:
 
 ```
 ERROR: Optional sorts are not supported by Statix: Opt(Sort("MySort"))
-Transformation failed unexpectedly for eclipse:///mylang/syntax/mysyntax.sdf3
+Transformation failed unexpectedly for eclipse:///mylang/sdf3/mysyntax.sdf3
 org.metaborg.core.transform.TransformException: Invoking Stratego strategy generate-statix failed at term:
   CfSignature("MySort", Some("MyCons"), [ Param(Opt(Sort("MySort")), "mySort") ])
 Stratego trace:

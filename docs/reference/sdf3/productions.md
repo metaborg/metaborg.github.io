@@ -13,7 +13,7 @@ $Symbol.$Constructor = $Symbol*
 A production is read as the definition.
 The symbol on the left-hand side is defined by the right-hand side of the production.
 
-Productions are used to describe [lexical](../lexical-syntax/), [context-free](../context-free-syntax/), and [kernel](../kernel-syntax/) syntax.
+Productions are used to describe [lexical](../lexical-sdf3/), [context-free](../context-free-sdf3/), and [kernel](../kernel-sdf3/) syntax.
 Productions may also occur in [priority sections](../disambiguation/#priorities), but might also be referred to by its ``$Symbol.$Constructor``.
 All productions with the same symbol together define the alternatives for that symbol.
 
