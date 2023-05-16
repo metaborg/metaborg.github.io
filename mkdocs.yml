@@ -199,7 +199,7 @@ nav:
       - reference/statix/queries.md
       - reference/statix/tests.md
       - reference/statix/stratego-api.md
-    - Flow Spec:
+    - FlowSpec:
       - reference/flowspec/index.md
       - reference/flowspec/structure.md
       - reference/flowspec/Stratego_API.md
@@ -217,33 +217,37 @@ nav:
       - reference/stratego/strategy-combinators.md
       - reference/stratego/dynamic-rules.md
       - Troubleshooting: reference/stratego/troubleshooting.md
-    - Testing:
-      - reference/testing/index.md
-      - reference/testing/test-suites.md
-      - reference/testing/test-expectations.md
-      - reference/testing/running-tests.md
-    - Editor Services:
-      - reference/editor-services/index.md
-      - reference/editor-services/esv.md
-      - reference/editor-services/analysis.md
-      - reference/editor-services/file-extensions.md
-      - reference/editor-services/hover.md
-      - reference/editor-services/menus.md
-      - reference/editor-services/on-save.md
-      - reference/editor-services/outline.md
-      - reference/editor-services/parsing.md
-      - reference/editor-services/reference-resolution.md
-      - reference/editor-services/renaming.md
-      - reference/editor-services/stratego.md
-      - reference/editor-services/syntax-highlighting.md
-    - Pipelines:
-      - reference/pipelines/index.md
-      - reference/pipelines/modules.md
-      - reference/pipelines/types.md
-      - reference/pipelines/generics.md
-      - reference/pipelines/functions.md
-      - reference/pipelines/expressions.md
-      - reference/pipelines/limitations.md
+    - SPT:
+      - reference/spt/index.md
+      - reference/spt/test-suites.md
+      - reference/spt/test-expectations.md
+      - reference/spt/running-tests.md
+    - ESV:
+      - reference/esv/index.md
+      - reference/esv/esv.md
+      - reference/esv/analysis.md
+      - reference/esv/file-extensions.md
+      - reference/esv/hover.md
+      - reference/esv/menus.md
+      - reference/esv/on-save.md
+      - reference/esv/outline.md
+      - reference/esv/parsing.md
+      - reference/esv/reference-resolution.md
+      - reference/esv/renaming.md
+      - reference/esv/stratego.md
+      - reference/esv/syntax-highlighting.md
+    - PIE:
+      - reference/pie/index.md
+      - reference/pie/modules.md
+      - reference/pie/types.md
+      - reference/pie/generics.md
+      - reference/pie/functions.md
+      - reference/pie/expressions.md
+      - reference/pie/limitations.md
+    - SDF2:
+      - reference/sdf2/index.md
+    - SDF:
+      - reference/sdf/index.md
   - Background:
     - background/index.md
     - Bibliography:

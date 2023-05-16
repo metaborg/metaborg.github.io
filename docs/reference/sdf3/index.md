@@ -1,17 +1,13 @@
 ---
 title: "SDF3"
-tags:
-  - Spoofax 2
-  - Spoofax 3
 ---
-
-# SDF3
+# SDF3 — Syntax Definition Formalism
 
 SDF3 is a meta-language in Spoofax for syntax definition, and the latest member of the family of syntax definition formalisms, which were developed in the context of the ASF+SDF[@BrandDHJ01], Stratego/XT[@BravenboerKVV08], and Spoofax[@KatsV10] language workbenches.  It inherits many features of its predecessors [SDF2](../sdf2/index.md) and [SDF](../sdf/index.md).
 
 [:material-message-question: How-tos](../../howtos/){ .md-button }
 [:material-file-cog: Reference](../../reference/sdf3/index.md){ .md-button }
-[:material-source-branch: Source code](https://github.com/metaborg/sdf/tree/master/org.metaborg.meta.lang.template){ .md-button }
+[:material-source-branch: Language](https://github.com/metaborg/sdf/tree/master/org.metaborg.meta.lang.template){ .md-button }
 
 The most recognizable change is to the syntax of productions that should make it more familiar to users of other grammar formalisms.  Further, it introduces new features in order to support multi-purpose interpretations of syntax definitions.  The goals of the design of SDF3 are (1) to support the definition of the concrete and abstract syntax of formal languages (with an emphasis on programming languages), (2) to support declarative syntax definition so that there is no need to understand parsing algorithms in order to understand definitions[@KatsVW10], (3) to make syntax definitions readable and understandable so that they can be used as reference documentation, and (4) to support execution of syntax definitions as parsers, but also for other syntactic operations, i.e to support multi-purpose interpretation based on a single source.  The focus on multipurpose interpretation is driven by the role of SDF3 in the Spoofax language workbench[@KatsV10].
 
