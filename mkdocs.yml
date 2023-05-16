@@ -20,9 +20,6 @@ theme:
   icon:
     logo: fontawesome/solid/sticky-note
     repo: fontawesome/brands/github
-    tag:
-      spoofax2: spoofax/spoofax2
-      spoofax3: spoofax/spoofax3
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -117,7 +114,8 @@ markdown_extensions:
   - pymdownx.saneheaders
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
