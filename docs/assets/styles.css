@@ -88,19 +88,23 @@ code.no-ligatures {
     margin: auto 1px;
 }
 
-.true {
+.true, .maintained {
+    {
     color: #00c853;
 }
 .trace {
 }
 .debug {
 }
+.available {
+
+}
 .info {
     color: #00b8d4;
 }
-.warning {
+.warning, .deprecated {
     color: #ff9100;
 }
-.error, .stop, .false {
+.error, .stop, .false, .unsupported {
     color: #ff1744;
 }
