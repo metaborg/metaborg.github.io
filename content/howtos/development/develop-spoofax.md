@@ -70,6 +70,8 @@ Some tricks:
 
 
 ### Troubleshooting
+If launching the guest Eclipse does not work due to a missing JavaSE-11, you need to register a Java 11 compatible JRE. Go to _Preferences_ ‣ _Java_ ‣ _Installed JREs_, and click the Add... button, and find the install directory of your Java 11 compatible JRE. For example, when you've installed Java 11 with SDKMAN, it may be at `~/.sdkman/candidates/java/11.0.13-tem`. 
+    
 If there are many errors in a project, try updating the Maven project. Right click the project and choose _Maven_ ‣ _Update Project..._, uncheck _Clean projects_ in the new dialog and press _OK_. This will update the project from the POM file, update any dependencies, and trigger a build. If this does not solve the problems, try it again but this time with _Clean projects_ checked. Note that if you clean a language project, it has to be rebuilt from the command-line. Restarting Eclipse and repeating these steps may also help.
 
 Multiple projects can be updated by selecting multiple projects in the package/project explorer, or by checking projects in the update dialog.
