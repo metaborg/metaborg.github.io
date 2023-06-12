@@ -6,7 +6,7 @@ Maven is a project management and build tool for software projects. Most compone
 
 
 ## Installation
-Maven can be downloaded and installed from <https://maven.apache.org/download.cgi>. We require Maven 3.5.4 or newer (except Maven 3.6.1 and 3.6.2). On macOs, Maven can be easily installed with [Homebrew](https://brew.sh/) by executing:
+Maven can be downloaded and installed from <https://maven.apache.org/download.cgi>. We require Maven 3.5.4 or newer (except Maven 3.6.1, 3.6.2, and 3.9.x). Maven 3.8.8 is recommended. On macOs, Maven can be easily installed with [Homebrew](https://brew.sh/) by executing:
 
 ```bash
 brew install maven
