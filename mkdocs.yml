@@ -182,8 +182,10 @@ nav:
     - references/index.md
     - Configuration:
       - references/config/index.md
+      - references/config/format.md
       - references/config/language.md
       - references/config/project.md
+      - references/config/examples.md
     - SDF3:
       - references/sdf3/index.md
       - references/sdf3/modules.md

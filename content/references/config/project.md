@@ -1,7 +1,81 @@
 # Project Configuration
 
 This page describes the configuration options in a `metaborg.yaml` file of a
-Spoofax project (i.e., a project that _uses_ a Spoofax language definition).
+Spoofax end-user project. An end-user project is a project that contains programs of languages,
+intended to be developed by an end-user of those languages. The
+configuration for an end-user project specifies dependencies.
+
+## `dependencies`
+
+Compile and source dependencies to other language components, and
+dependencies to Java artifacts.
+
+### `compile`
+
+List of compile dependencies to language components. A compile
+dependency to a language component indicates that this project uses
+files of that language, and as such its compiler should be invoked.
+
+-   Format: List of language component identifiers (see `id` option
+    below)
+
+-   Default: None
+
+-   Example:
+
+    ``` yaml
+    dependencies:
+      compile:
+      - org.metaborg:org.metaborg.meta.lang.esv:${metaborgVersion}
+    ```
+
+### `source`
+
+List of source dependencies to language components. A source dependency
+to a language component indicates that this project uses exported files
+of that language or library.
+
+-   Format: List of language component identifiers (see `id` option
+    below)
+
+-   Default: None
+
+-   Example:
+
+    ``` yaml
+    dependencies:
+      source:
+      - org.metaborg:org.metaborg.meta.lib.analysis:${metaborgVersion}
+    ```
+
+### `java`
+
+List of dependencies to Java artifacts. A Java artifact dependency
+indicates that when this project is compiled, the Java artifact should
+be added to the compilation classpath. Spoofax currently does nothing
+with these dependencies, but they are used by Maven when compiling the
+project.
+
+-   Format: List of Maven artifact identifiers (see `id` option below)
+
+-   Default: None
+
+-   Example:
+
+    ``` yaml
+    dependencies:
+      java:
+      - com.google.guava:guava:19.0
+      - com.google.inject:guice:4.0
+    ```
+!!! warning Warning
+
+    There is currently a bug in the version parser that parses versions with
+    1 or 2 components to a version with 3 components. For example, the
+    version [1]{.title-ref} is parsed to [1.0.0]{.title-ref}, and
+    [4.0]{.title-ref} to [4.0.0]{.title-ref}. This will cause build failures
+    since dependencies with those versions cannot be found.
+
 
 ## `runtime`
 
