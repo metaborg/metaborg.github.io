@@ -379,7 +379,6 @@ language specification is built.
         - -Idef
         - ${path:root}/lib/SDF.def
     ```
-:::
 
 
 #### `sdf-meta`
@@ -393,7 +392,7 @@ it.
 
 -   Format: List of command-line arguments.
 
--   Default: \[Stratego-\<languagename\>.sdf\]
+-   Default: \[Stratego-<languagename\>.sdf\]
 
 -   Example:
 
@@ -473,11 +472,10 @@ Configuration options for Statix.
 Whether to use the specification from the build system as a source of
 configuration for that build system, or this configuration file.
 
-For example, when set to `false` (the default), and Spoofax\'s Maven
-plugin\'s pomless support is enabled through the
-`.mvn/settings.xml`{.interpreted-text role="file"} file, Maven will
-entirely ignore the contents of the `pom.xml`{.interpreted-text
-role="file"} file, and use this configuration file as a source of
+For example, when set to `false` (the default), and Spoofax's Maven
+plugin's pomless support is enabled through the `.mvn/settings.xml` 
+file, Maven will entirely ignore the contents of the `pom.xml` file, 
+and use this configuration file as a source of
 information. When this is not desired, for example if your POM file has
 information that is not covered in this configuration file, set it to
 `true` to use the POM file. The `id`, `name`, and `dependencies` must be
@@ -501,7 +499,7 @@ and Gradle.
 
 ### Additional build steps
 
-The [build]{.title-ref} configuration option also hosts a list of
+The `build` configuration option also hosts a list of
 additional build steps.
 
 -   Format: List of build steps. There are 2 kinds of additional build
