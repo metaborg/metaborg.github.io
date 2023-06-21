@@ -72,9 +72,8 @@ project.
 
     There is currently a bug in the version parser that parses versions with
     1 or 2 components to a version with 3 components. For example, the
-    version [1]{.title-ref} is parsed to [1.0.0]{.title-ref}, and
-    [4.0]{.title-ref} to [4.0.0]{.title-ref}. This will cause build failures
-    since dependencies with those versions cannot be found.
+    version `1` is parsed to `1.0.0`, and`4.0` to `4.0.0`. This will cause
+    build failures since dependencies with those versions cannot be found.
 
 
 ## `runtime`
