@@ -15,7 +15,10 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Changes
 
+The guava library is no longer a direct dependency. It is still a transitive dependency through guice.
+
 The following dependencies were updated:
+
 - `com.google.guava:guava`: 26.0 -> 31.1
 - `com.google.guava:failureaccess`: -> 1.0.1. Added because guava needs it.
 
