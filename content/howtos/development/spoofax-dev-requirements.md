@@ -19,7 +19,7 @@ The following tools are required to build and develop Spoofax:
     On macOS, it can be a bit tricky to use the installed JDK, because Apple by default installs JRE 6. To check which version of Java you are running, execute the `java -version` command. If this tells you that the Java version is 1.8 or newer, or Java 9 or newer, everything is fine. If not, you can either install a newer Java version through [Homebrew](https://brew.sh/) (`brew install --cask adoptopenjdk8`), or use a JDK manager such as [SDKMAN!](https://sdkman.io/).
 
 
-??? summary "Python 3.4 or newer"
+??? summary "Python 3.10 or newer"
     Python scripts are used to orchestrate the build. Instructions on how to install Python for your platform can be found here: <https://www.python.org/downloads/>.
 
     If you run macOs and have [Homebrew](https://brew.sh/) installed, you can install Python by executing `brew install python3`. Confirm your Python installation by executing `python3 --version` or `python --version`, depending on how your package manager sets up Python.
