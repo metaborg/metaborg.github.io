@@ -15,7 +15,11 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Changes
 
+### Dependencies
+
 The guava library is no longer a direct dependency. It is still a transitive dependency through guice.
+
+We have replaced `jsr305` with `jakarta.annotation-api`. In preparation for removing usage of other `javax` package usage, we have added `jakarta.inject-api` as a dependency too. `javax.inject` will be dropped in a later release after bootstrapping.
 
 The following dependencies were updated:
 
