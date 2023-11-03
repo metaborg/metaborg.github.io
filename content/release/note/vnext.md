@@ -26,6 +26,10 @@ The following dependencies were updated:
 - `com.google.guava:guava`: 26.0 -> 31.1
 - `com.google.guava:failureaccess`: -> 1.0.1. Added because guava needs it.
 
+### Statix
+
+- Upon exception in solver, print trace of current constraint and current scope graph.
+
 ## Fixes
 
 ### 32-bit binary support
