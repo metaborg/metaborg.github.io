@@ -30,6 +30,10 @@ The following dependencies were updated:
 
 - Upon exception in solver, print trace of current constraint and current scope graph.
 
+### SPT
+
+- The SPT command runner (`org.metaborg.spt.cmd.Main`) now returns a non-zero exit code (`1`) upon test _failure_ (in addition to _errors_).
+
 ## Fixes
 
 ### 32-bit binary support
