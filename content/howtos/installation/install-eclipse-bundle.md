@@ -37,7 +37,7 @@ Then you have used the embedded JRE on an ARM macOS, which is not supported.
 See [how to install Spoofax on macOS M1/M2](install-spoofax-on-macos-arm.md) for details.
 
 
-### {{ os.macos }}: "Eclipse" cannot be opened because the developer could not be verified
+### {{ os.macos }}: '"Eclipse" cannot be opened because the developer could not be verified' or '"spoofax.app" is damaged and can't be opened. You should move it to the Trash.'
 macOS puts unverified binaries in 'quarantine' and disallows their execution. To remove the `com.apple.quarantine` attribute, do:
 
 ```bash
