@@ -1,4 +1,8 @@
-FROM python:3.11-alpine
+FROM python:3.12-alpine
+
+ARG PORT=8000
+ARG TOOLS=tools/
+ARG REQUIREMENTS=requirements.txt
 
 RUN apk upgrade --update-cache -a \
  && apk add --no-cache \
@@ -7,8 +11,8 @@ RUN apk upgrade --update-cache -a \
       openssh \
  && apk add --no-cache --virtual .build gcc musl-dev
 
-COPY requirements.txt requirements.txt
-COPY tools/ tools/
+COPY ${TOOLS} tools/
+COPY ${REQUIREMENTS} requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt \
  && apk del .build gcc musl-dev \
  && rm -rf /tmp/* /root/.cache \
@@ -16,9 +20,12 @@ RUN pip install --no-cache-dir -r requirements.txt \
       -type f \
       -path "*/__pycache__/*" \
       -exec rm -f {} \;
+RUN <<FILE cat > /root/.gitconfig
+[safe]
+     directory = /docs
+FILE
 
-# Set working directory
 WORKDIR /docs
-EXPOSE 8000
+EXPOSE ${PORT}
 ENTRYPOINT ["mkdocs"]
-CMD ["serve", "--dev-addr=0.0.0.0:8000"]
+CMD ["serve", "--dev-addr=0.0.0.0:${PORT}"]
