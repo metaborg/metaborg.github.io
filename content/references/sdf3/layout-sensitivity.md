@@ -3,7 +3,7 @@
 SDF3 supports definition of layout sensitive syntax by means of low-level layout _constraints_ and high-level layout _declarations_.
 
 !!! note
-    If you want to use layout constraints or layout declarations, you should specify the ``jsglr-version: layout-sensitive`` parameter for SDF3, see [configuration](../configuration/).
+    If you want to use layout constraints or layout declarations, you should specify the ``jsglr-version: layout-sensitive`` parameter for SDF3, see [configuration](configuration.md).
 
 
 ## Layout Constraints

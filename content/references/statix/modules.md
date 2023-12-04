@@ -58,7 +58,7 @@ declarations. Each of these will be explained in the appropriate subsection.
 ## Rules
 
 In a `rules` section, the rules of a specification are defined. For more
-information on rules, see the [Rules](../rules) section.
+information on rules, see the [Rules](rules.md) section.
 
 ```statix
 rules

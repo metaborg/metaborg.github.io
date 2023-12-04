@@ -184,7 +184,7 @@ If multiple tokenize options are specified, the last one is used.
 ### `reject`
 
 Convenient way for setting up reject rules for keywords.
-See the section on [rejections](../disambiguation/#rejections) for more information.
+See the section on [rejections](disambiguation.md#rejections) for more information.
 The structure of the reject option
 is as follows:
 

@@ -46,7 +46,7 @@ Each PIE file forms a module.
 Modules can define functions and datatypes, and can import functions and datatypes from other modules.
 It is recommended to use the same name for the module as the path and filename, but this is not required.
 As such, the PIE DSL does not place any restrictions on paths and file names besides the standard restrictions for Spoofax languages. 
-The module system is described in [Modules](modules/).
+The module system is described in [Modules](modules.md).
 
 
 ### Types and data definitions
@@ -55,10 +55,10 @@ The PIE DSL is a statically typed language.
 There are a few built-in types, such as `int` and `path`.
 Built-in types use lowercase characters.
 Custom datatypes can currently only be imported from Java as foreign definitions.
-The types in the PIE DSL are described in [Types](types/).
+The types in the PIE DSL are described in [Types](types.md).
 The PIE DSL also supports generic datatypes.
 These follow Java semantics.
-The semantics of generics can be found in [Generics](generics/).
+The semantics of generics can be found in [Generics](generics.md).
 
 
 ### Function definitions
@@ -81,10 +81,10 @@ The function head describes the signature of the function: the name, the input p
 All functions can be called the same way regardless of their implementation.
 The function implementation describes the way a function is implemented.
 A function can be implemented in PIE by providing an expression, as can be seen with `greet`
-Expressions are described in [Expressions](expressions/).
+Expressions are described in [Expressions](expressions.md).
 A function can also be implemented in Java.
 The three ways this can be done are shown in the example as well.
-A complete overview of functions is given in [Functions](functions/).
+A complete overview of functions is given in [Functions](functions.md).
 
 
 ### Misc information.

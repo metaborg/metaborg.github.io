@@ -12,7 +12,7 @@ constraint can be declared in a `#!statix rules` section, or in a `#!statix cons
 subsection of a `#!statix signature` section.
 
 A constraint is declared by specifying its name and argument type. For more
-information on types, please refer to the [Terms](../terms) section. Note that
+information on types, please refer to the [Terms](terms.md) section. Note that
 the name of the constraint must be unique within a specification.
 
 ```statix
@@ -113,8 +113,8 @@ Compared to predicative rule definitions as introduced earlier in this section,
 an additional term after an equality-sign is appended to the rule head. This
 term denotes the output term (the term inferred by the rule).
 
-A functional constraint can be used in a [_term_](../terms) position, as opposed
-to a [_constraint_](../basic-constraints) position for predicative rules.
+A functional constraint can be used in a [_term_](terms.md) position, as opposed
+to a [_constraint_](basic-constraints.md) position for predicative rules.
 Otherwise, their syntax is the same.
 
 ```statix

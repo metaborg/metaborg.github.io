@@ -92,7 +92,7 @@ one of the following:
 
  - ``data-dependent``:       Data-dependent JSGLR2 solves deep priority conflicts using data-dependent parsing, which does not require duplicating the grammar productions.
  - ``incremental``:          Incremental JSGLR2 reuses previous parse results to speed up parsing.
- - ``layout-sensitive``:     Layout-sensitive JSGLR2, see [Layout Sensitivity](../layout-sensitivity/).
+ - ``layout-sensitive``:     Layout-sensitive JSGLR2, see [Layout Sensitivity](layout-sensitivity.md).
  - ``recovery``:             JSGLR2 with recovery tries to recover from parse errors. This extension is experimental.
  - ``recovery-incremental``: Incremental JSGLR2 with recovery. This extension is experimental.
 

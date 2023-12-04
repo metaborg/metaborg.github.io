@@ -50,7 +50,7 @@ That is to say, `Apple` is treated as a generic type that just happens to have z
 ??? tip "Omitting type parameter and argument lists"
     Type parameter/argument list can sometimes be omitted.
     Parameter lists can be omitted if they are empty: `data Apple = $DataImpl`, `func notGeneric(string) -> unit = $FuncImpl`.
-    Type argument lists can be omitted for empty lists and for calls to [the built-in `supplier` function](../expressions#create-supplier).
+    Type argument lists can be omitted for empty lists and for calls to [the built-in `supplier` function](expressions.md#create-supplier).
     For example, `Apple`, `notGeneric("regular argument")`.
 
 A type declares zero or more generic parameters.
@@ -207,7 +207,7 @@ This is because Java is not generic in the amount of generic elements.
 
 ### supplier
 `supplier<T>` represents a supplier of a value of type `T`.
-Suppliers represent a value, either by [being created with a value](../expressions#create-supplier) or by [deferring a task that returns the value](../expressions#task-supplier).
+Suppliers represent a value, either by [being created with a value](expressions.md#create-supplier) or by [deferring a task that returns the value](expressions.md#task-supplier).
 Suppliers have a single method `get<>() -> T`, which returns the value of the supplier, either by returning the value if it already existed or by calling the task that the supplier supplies.
 
 The main use case for suppliers is as input types for tasks.
@@ -302,7 +302,7 @@ Names start with a letter or underscore, and can contain letters, numbers, a das
 
 The list of generic parameters can be omitted.
 This is syntactic sugar for an empty list, so `Foo` is the same as `Foo<>`.
-For an explanation of generics in the PIE DSL, see [generics](../generics/)
+For an explanation of generics in the PIE DSL, see [generics](generics.md)
 
 The super type specifies the super type of this data type.
 The super type can be omitted, for example `data Foo = $DataImpl`.
@@ -321,7 +321,7 @@ The `$QID` specifies the qualified name of the backing Java class.
 `$FuncHeads` is a newline separated list of function headers.
 These are declarations of the non-static methods of the class.
 Not all non-static methods of the class need to be declared here.
-Static methods of the class can be declared as [`foreign java` functions](../functions#foreign-java-functions) outside this data definition.
+Static methods of the class can be declared as [`foreign java` functions](functions.md#foreign-java-functions) outside this data definition.
 
 ???+ tip "Separate your imports"
     Define foreign java datatypes in a separate module and import them into your main module to keep your main module cleaner.

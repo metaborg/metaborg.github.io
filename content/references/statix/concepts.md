@@ -20,7 +20,7 @@ constraint problem. When solving the constraint problem, a minimal model is infe
 from the constraints. This model represents a principal typing for the original
 program. In order to express such constraint problems, a versatile set of built-in
 constraints is provided by the Statix language. For more information on constraints,
-see the [Basic Constraints](../basic-constraints) section.
+see the [Basic Constraints](basic-constraints.md) section.
 
 
 ## Rules
@@ -30,7 +30,7 @@ constraint handling rules. Rules consist of a head and a body. The head specifie
 the arguments to the constraint, and (optionally) a guard, which indicates when
 to apply the rule. The body is a regular constraint, which, when proven, asserts
 that the constraint holds. More detailed information about user-defined constraints
-can be found in the [Rules](../rules) section.
+can be found in the [Rules](rules.md) section.
 
 
 ## Scope Graphs
@@ -42,4 +42,4 @@ are represented as nodes, visibility is modelled using _labelled edges_ between
 nodes, and _declarations_ using special terminal nodes that are associated with
 a particular datum. References are modelled using _scope graph queries_. For
 more information on scope graph construction and querying, see sections
-[Scope Graph Constraints](../scope-graphs) and [Queries](../queries), respectively.
+[Scope Graph Constraints](scope-graphs.md) and [Queries](queries.md), respectively.

@@ -9,7 +9,7 @@ The nice thing about term rewriting is that there is no need to define traversal
 However, the complete normalization approach of rewriting turns out not to be adequate for program transformation, because rewrite systems for programming languages will often be non-terminating and/or non-confluent.
 In general, it is not desirable to apply all rules at the same time or to apply all rules under all circumstances.
 
-The usual solution is [to encode the strategy in the rewrite rules](../limitations-of-rewriting/).
+The usual solution is [to encode the strategy in the rewrite rules](limitations-of-rewriting.md).
 But this intertwines the strategy with the rules, and makes the latter unreusable.
 
 

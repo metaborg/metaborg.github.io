@@ -190,7 +190,7 @@ A sequence symbol is normalized as:
 ## Labeled symbols
 
 SDF3 supports decorating symbols with labels, such as ``myList:{elem:Stmt ";"}*``.
-The labels can be used for [layout constraints/declarations](../layout-sensitivity/) or by other tools that use SDF3 grammars as input.
+The labels can be used for [layout constraints/declarations](layout-sensitivity.md) or by other tools that use SDF3 grammars as input.
 
 
 ## ``LAYOUT``

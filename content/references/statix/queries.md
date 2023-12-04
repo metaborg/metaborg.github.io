@@ -1,6 +1,6 @@
 # Queries
 
-Scope Graphs, as introduced in the [previous section](../scope-graphs) can be
+Scope Graphs, as introduced in the [previous section](scope-graphs.md) can be
 queried. Scope graph queries always start in a particular scope, and traverse
 the scope graph in order to find declarations under a particular relation. The
 syntax for queries is as follows:
@@ -38,7 +38,7 @@ the following components:
 
 - `$Label`: Matches paths that travers a single edge with the label `$Label`.
   Requires the label to be declared in a `signature` section, as explained in
-  the section on [edges](../scope-graphs#edges).
+  the section on [edges](scope-graphs.md#edges).
 - `e`: _epsilon_. Matches the empty path. Queries using this filter will only return
   declarations in the scope where the query started.
 - `0`: _empty set_. Matches no path.
@@ -69,7 +69,7 @@ anonymous lambda rules:
 { $Pattern :- $Constraint }
 ```
 
-This rule is instantiated for every [declaration](../scope-graphs#declarations)
+This rule is instantiated for every [declaration](scope-graphs.md#declarations)
 that is reachable according to the path well-formedness expression. When the
 instantiated body constraint holds, the declaration is included in the query
 answer.
@@ -77,13 +77,13 @@ answer.
 ??? info "Lambda Instantiation"
     Lambda constraint instantiation is similar to rule instantiation. For more
     information on rule instantiation, see the section about
-    [rule definitions](../rules#rule-definitions).
+    [rule definitions](rules.md#rule-definitions).
 
 ??? info "Entailment semantics"
     Data well-formedness conditions are treated as entailment/implied conditions.
     Hence, they are not allowed to extend or refine the outer context. For more
     information on this evaluation mode, see the documentation of the
-    [`try` construct](../basic-constraints#try).
+    [`try` construct](basic-constraints.md#try).
 
 The type of the predicate that is expected depends on the kind of relation that
 is used. For predicative relations, all arguments in the relation are provided
@@ -101,7 +101,7 @@ expects a single scope as argument.
 ??? example "Example of filters"
     A simple query for variables illustrates both filters. Suppose the relation
     `var` is in scope with type `string -> TYPE`. Then a rule (with
-    [type ascriptions](../terms#type-ascription)) that looks up a
+    [type ascriptions](terms.md#type-ascription)) that looks up a
     variable definition can be defined as follows.
     ```statix
     resolveVar(s : scope, name : string) = R :-
@@ -156,7 +156,7 @@ Label orders (`$LabelOrder`) are expressed as less-than relations on labels.
 $Label < $Label
 ```
 
-Here, a label is either a [declared label symbol](../scope-graphs#edges), or `$`,
+Here, a label is either a [declared label symbol](scope-graphs.md#edges), or `$`,
 which denotes the 'end-of-path' label. This label can be used to express orders
 on path length. For example, `$ < P` expresses that paths with fewer `P` labels
 are preferred over paths with more `P` labels.
@@ -242,7 +242,7 @@ relation is unary, the tuple is omitted. When the [query target](#query-target)
 is `()`, `R` is the `scope` type.
 
 For the syntactic structure of the paths, please refer to the section on
-[path terms](../terms#paths). Semantically, for any query answer pair `(p, d)`,
+[path terms](terms.md#paths). Semantically, for any query answer pair `(p, d)`,
 the path `p` represents the path followed from the scope in which the query
 started to the scope in which the declaration of `d` was found.
 

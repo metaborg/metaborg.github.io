@@ -28,10 +28,10 @@ Note that SDF3 does not support parameterized modules.
 
 An SDF3 module may constitute of zero or more sections. All sections contribute to the final grammar that defines a language:
 
- - `sorts`, `lexical sorts`, `context-free sorts` (see [Symbols#Sorts](../symbols/#sorts))
- - `lexical syntax` (see [Lexical Syntax](../lexical-syntax/))
- - `context-free syntax` (see [Context-Free Syntax](../context-free-syntax/))
- - `syntax` (see [Kernel Syntax](../kernel-syntax/))
- - `lexical start-symbols`, `context-free start-symbols`, `start-symbols` (see [Start Symbols](../start-symbols/))
- - `context-free priorities`, `priorities` (see [Disambiguation](../disambiguation/))
- - `template options` (see [Templates](../templates/))
+ - `sorts`, `lexical sorts`, `context-free sorts` (see [Symbols#Sorts](symbols.md#sorts))
+ - `lexical syntax` (see [Lexical Syntax](lexical-syntax.md))
+ - `context-free syntax` (see [Context-Free Syntax](context-free-syntax.md))
+ - `syntax` (see [Kernel Syntax](kernel-syntax.md))
+ - `lexical start-symbols`, `context-free start-symbols`, `start-symbols` (see [Start Symbols](start-symbols.md))
+ - `context-free priorities`, `priorities` (see [Disambiguation](disambiguation.md))
+ - `template options` (see [Templates](templates.md))

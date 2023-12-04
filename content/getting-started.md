@@ -54,7 +54,7 @@ Once installed, create a new Spoofax project:
 2.  Provide a name for your new language and click _Finish_.
 3.  Select the created language project and press ++ctrl+alt+b++ (++cmd+alt+b++ on macOS) to build the project.
 4.  Create a new file with the extension registered to your language to test it.
-5.  Follow one of the [tutorials](/tutorials/) to learn more.
+5.  Follow one of the [tutorials](tutorials/index.md) to learn more.
 
 !!! tip "Finding the filename extension of your language"
     If you didn't explicitly specify a filename extension for your language, it is derived from the language name. You can find the filename extension for your language in `editor/Main.esv` at the `extensions` property.

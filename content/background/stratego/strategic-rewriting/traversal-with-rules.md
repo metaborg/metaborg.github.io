@@ -1,6 +1,6 @@
 # Factoring out Traversal
 
-Continuing the inspection of [limitations of term rewriting](../limitations-of-rewriting), we explore how term traversal can be factored out into separate rules.
+Continuing the inspection of [limitations of term rewriting](limitations-of-rewriting.md), we explore how term traversal can be factored out into separate rules.
 
 ## Attempt 3: Using Rules for Traversal 
 

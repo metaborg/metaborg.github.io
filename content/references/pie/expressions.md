@@ -8,7 +8,7 @@ Brackets have the following form: `($Exp)`
 
 This section describes expressions in the PIE DSL.
 Expressions can use declared values.
-These are described [in this section of the functions documentation](../functions#parameters-and-values).
+These are described [in this section of the functions documentation](functions.md#parameters-and-values).
 
 
 ## Syntactic priorities (disambiguation)
@@ -53,39 +53,39 @@ The following table gives a quick overview of all expressions in the PIE DSL.
 | name | syntax | example | description | type |
 | ---- | ------ | ------- | ----------- | ---- |
 | [Block](#block) | `{$Exps}` | `{val x = 4; x+7}` | A sequence of expressions | The type of the last expression |
-| [Make nullable](#make-nullable) | `$Exp?` | `"nullable string"?` | Makes the type `T` of an expression [nullable](../types#nullable-types) (`T?`) | When applied to an expression of type `T`, `T?` |
-| [Make non-nullable](#make-non-nullable) | `$Exp!` | `input!` | Makes the type `T?` of an expression non-[nullable](../types#nullable-types) (`T`). Throws an exception if the value is [null](#null) | When applied to an expression of type `T?`, `T` |
-| [Not](#not) | `!$Exp` | `!flag` | Turns `false` to `true` and vice versa | [bool](../types#bool) |
-| [Compare for (in)equality](#compare-for-inequality) | `$Exp == $Exp` and `Exp != $Exp` | `result == null`, `errors != []` | Compares two values for (in)equality | [bool](../types#bool) |
-| [Logical or](#logical-or) | `$Exp || $Exp` | `dryRun || input == null` | Is `true` unless both the values are `false` | [bool](../types#bool) |
-| [Logical and](#logical-and) | `$Exp && $Exp` | `!dryRun && input != null` | Is `true` iff both values are `true` | [bool](../types#bool) |
+| [Make nullable](#make-nullable) | `$Exp?` | `"nullable string"?` | Makes the type `T` of an expression [nullable](types.md#nullable-types) (`T?`) | When applied to an expression of type `T`, `T?` |
+| [Make non-nullable](#make-non-nullable) | `$Exp!` | `input!` | Makes the type `T?` of an expression non-[nullable](types.md#nullable-types) (`T`). Throws an exception if the value is [null](#null) | When applied to an expression of type `T?`, `T` |
+| [Not](#not) | `!$Exp` | `!flag` | Turns `false` to `true` and vice versa | [bool](types.md#bool) |
+| [Compare for (in)equality](#compare-for-inequality) | `$Exp == $Exp` and `Exp != $Exp` | `result == null`, `errors != []` | Compares two values for (in)equality | [bool](types.md#bool) |
+| [Logical or](#logical-or) | `$Exp || $Exp` | `dryRun || input == null` | Is `true` unless both the values are `false` | [bool](types.md#bool) |
+| [Logical and](#logical-and) | `$Exp && $Exp` | `!dryRun && input != null` | Is `true` iff both values are `true` | [bool](types.md#bool) |
 | [Addition](#addition) | `$Exp + $Exp` | `x + y` | Adds or concatenates two values | Depends on the types of the expressions |
 | [Value declaration](#value-declaration) | `val $VALID TypeHint? = $Exp` | `val num: int = 47` | Declare a value by name | The type of the declared value |
 | [Value reference](#value-reference) | `$VALID` | `x` | Reference a value or parameter | The type of the referenced value |
-| [if](#if) | `if ($Exp) $Exp` | `if (input == null) fail "Input is null"` | Evaluates the body if the condition evaluates to `true` | [unit](../types#unit) |
+| [if](#if) | `if ($Exp) $Exp` | `if (input == null) fail "Input is null"` | Evaluates the body if the condition evaluates to `true` | [unit](types.md#unit) |
 | [if-else](#if-else) | `if ($Exp) $Exp else $Exp` | `if (name != null) name else default` | Evaluates the first branch if the condition is `true`, and the second branch otherwise | The least upper bound of the types of the branches |
-| [List comprehension](#list-comprehension) | `[$Exp | $Binder <- $Exp]` | `["Key: $key; value: $value" | (key, value) <- pairs]` | Evaluate the expression for each element in a list | A [list](../types#lists) of the type of the expression |
-| [Function calls](#function-calls) | `$ModuleList$FUNCID$TypeArgs($Exps)` | `stdLib:okResult<string>("Hello world!")` | Call [a function](../functions#function-invocations) | The [return type of the function](../functions#return-type) |
-| [Method calls](#method-calls) | `$Exp.$FUNCID$TypeArgs($Exps)` | `file.replaceExtension("pp.pie")` | Call [a method](../functions#function-invocations) | The [return type of the method](../functions#return-type) |
-| [Create supplier](#create-supplier) | `supplier$TypeArgs($Exps)` | `supplier(47)` | Create a supplier | [A supplier](../types#supplier) of the provided type |
-| [Task supplier](#task-supplier) | `$ModuleList$FUNCID.supplier$TypeArgs($Exps)` | `lang:java:parse.supplier(file)` | Create a supplier from a function | [A supplier](../types#supplier) of the return type of the function |
-| [requires](#requires) | `requires $Exp $FilterPart? $StamperPart?` | `requires ./metaborg.yaml by hash` | Declare that the current task depends on the provided [path](../types#path) | [unit](../types#unit) |
-| [generates](#generates) | `generates $Exp $StamperPart?` | `generates file by hash` | Declare that the current task generates on the provided [path](../types#path) | [unit](../types#unit) |
-| [list](#list) | `list $Exp $FilterPart?` | `list ./examples with extension "pie"` | Lists the direct children of the given [directory](../types#path). Note: for list literals, see further down this table. | A [list](../types#lists) of [paths](../types#path), i.e. `path*` |
-| [walk](#walk) | `walk $Exp $FilterPart?` | `walk ./examples with extension "pie"` | Recursively get all descendants of the given [directory](../types#path) | A [list](../types#lists) of [paths](../types#path), i.e. `path*` |
-| [exists](#exists) | `exists $Exp` | `exists ./config.json` | Check if a [file](../types#path) exists | [bool](../types#bool) |
-| [read](#read) | `read $Exp` | `read ./config.json` | Returns the [file](../types#path) contents as a string, or null if the file does not exist | A [nullable](../types#nullable-types) [string](../types#string), i.e. `string?` |
-| [return](#return) | `return $Exp` | `return false` | Returns the provided value from the current function | [unit](../types#unit). Note: may get changed to [bottom type](../types#bottom) |
-| [fail](#fail) | `fail $Exp` | `fail "input cannot be null"` | Throws an ExecException with the provided [string](../types#string) as message | [unit](../types#unit). Note: may get changed to [bottom type](../types#bottom) |
-| [Unit literal](#unit-literal) | `unit` | `unit` | Literal expression of the only value of the [unit type](../types#unit) | [unit](../types#unit) |
-| [true](#true) | `true` | `true` | Literal expression for the [boolean](../types#bool) value `true`. | [bool](../types#bool) |
-| [false](#false) | `false` | `false` | Literal expression for the [boolean](../types#bool) value `false`. | [bool](../types#bool) |
-| [int literal](#int-literal) | `"-"? [0-9]+` | `0`, `23`, `-4` | A literal value of the [int type](../types#int) | [int](../types#int) |
-| [null](#null) | `null` | `null` | Literal expression for the null value of [nullable types](../types#nullable-types). | [null type](../types#null-type) |
-| [Tuple literal](#tuple-literal) | `($Exps)` | `(1, "one", "une")` | A literal value of a [tuple type](../types#tuples) | A [tuple type](../types#tuples) of the types of the elements |
-| [List literal](#list-literal) | `[$Exps]` | `(1, 2, 3)` | A literal value of a [list type](../types#lists). For the keyword `list`, see earlier in this table. | A [list](../types#lists) of the least upper bound of the types of the elements |
-| [String literal](#string-literal) | `"$StrParts"` | `"Hello $name!"` | A literal value of the [string type](../types#string) | [string](../types#string) |
-| [Path literal](#path-literal) | `$PathStart$PathParts` | `./src/test/resources` | A literal value of the [path type](../types#path) | [path](../types#path) |
+| [List comprehension](#list-comprehension) | `[$Exp | $Binder <- $Exp]` | `["Key: $key; value: $value" | (key, value) <- pairs]` | Evaluate the expression for each element in a list | A [list](types.md#lists) of the type of the expression |
+| [Function calls](#function-calls) | `$ModuleList$FUNCID$TypeArgs($Exps)` | `stdLib:okResult<string>("Hello world!")` | Call [a function](functions.md#function-invocations) | The [return type of the function](functions.md#return-type) |
+| [Method calls](#method-calls) | `$Exp.$FUNCID$TypeArgs($Exps)` | `file.replaceExtension("pp.pie")` | Call [a method](functions.md#function-invocations) | The [return type of the method](functions.md#return-type) |
+| [Create supplier](#create-supplier) | `supplier$TypeArgs($Exps)` | `supplier(47)` | Create a supplier | [A supplier](types.md#supplier) of the provided type |
+| [Task supplier](#task-supplier) | `$ModuleList$FUNCID.supplier$TypeArgs($Exps)` | `lang:java:parse.supplier(file)` | Create a supplier from a function | [A supplier](types.md#supplier) of the return type of the function |
+| [requires](#requires) | `requires $Exp $FilterPart? $StamperPart?` | `requires ./metaborg.yaml by hash` | Declare that the current task depends on the provided [path](types.md#path) | [unit](types.md#unit) |
+| [generates](#generates) | `generates $Exp $StamperPart?` | `generates file by hash` | Declare that the current task generates on the provided [path](types.md#path) | [unit](types.md#unit) |
+| [list](#list) | `list $Exp $FilterPart?` | `list ./examples with extension "pie"` | Lists the direct children of the given [directory](types.md#path). Note: for list literals, see further down this table. | A [list](types.md#lists) of [paths](types.md#path), i.e. `path*` |
+| [walk](#walk) | `walk $Exp $FilterPart?` | `walk ./examples with extension "pie"` | Recursively get all descendants of the given [directory](types.md#path) | A [list](types.md#lists) of [paths](types.md#path), i.e. `path*` |
+| [exists](#exists) | `exists $Exp` | `exists ./config.json` | Check if a [file](types.md#path) exists | [bool](types.md#bool) |
+| [read](#read) | `read $Exp` | `read ./config.json` | Returns the [file](types.md#path) contents as a string, or null if the file does not exist | A [nullable](types.md#nullable-types) [string](types.md#string), i.e. `string?` |
+| [return](#return) | `return $Exp` | `return false` | Returns the provided value from the current function | [unit](types.md#unit). Note: may get changed to [bottom type](types.md#bottom) |
+| [fail](#fail) | `fail $Exp` | `fail "input cannot be null"` | Throws an ExecException with the provided [string](types.md#string) as message | [unit](types.md#unit). Note: may get changed to [bottom type](types.md#bottom) |
+| [Unit literal](#unit-literal) | `unit` | `unit` | Literal expression of the only value of the [unit type](types.md#unit) | [unit](types.md#unit) |
+| [true](#true) | `true` | `true` | Literal expression for the [boolean](types.md#bool) value `true`. | [bool](types.md#bool) |
+| [false](#false) | `false` | `false` | Literal expression for the [boolean](types.md#bool) value `false`. | [bool](types.md#bool) |
+| [int literal](#int-literal) | `"-"? [0-9]+` | `0`, `23`, `-4` | A literal value of the [int type](types.md#int) | [int](types.md#int) |
+| [null](#null) | `null` | `null` | Literal expression for the null value of [nullable types](types.md#nullable-types). | [null type](types.md#null-type) |
+| [Tuple literal](#tuple-literal) | `($Exps)` | `(1, "one", "une")` | A literal value of a [tuple type](types.md#tuples) | A [tuple type](types.md#tuples) of the types of the elements |
+| [List literal](#list-literal) | `[$Exps]` | `(1, 2, 3)` | A literal value of a [list type](types.md#lists). For the keyword `list`, see earlier in this table. | A [list](types.md#lists) of the least upper bound of the types of the elements |
+| [String literal](#string-literal) | `"$StrParts"` | `"Hello $name!"` | A literal value of the [string type](types.md#string) | [string](types.md#string) |
+| [Path literal](#path-literal) | `$PathStart$PathParts` | `./src/test/resources` | A literal value of the [path type](types.md#path) | [path](types.md#path) |
 
 
 There is also a section on [common lexical elements](#common-lexical-elements).
@@ -106,7 +106,7 @@ For example:
 }
 ```
 
-Empty blocks (blocks without any expression) are allowed, their type and value is [`unit`](../types#unit).
+Empty blocks (blocks without any expression) are allowed, their type and value is [`unit`](types.md#unit).
 
 Blocks introduce their own scope.
 Expressions in the block are evaluated in that scope.
@@ -120,7 +120,7 @@ Values declared inside the block are not visible after the block.
 
 Make nullable is expressed as a question mark after an expression.
 As its name suggests, it makes a non-nullable expression nullable.
-The value remains unchanged, but the type of the expression is now [nullable](../types#nullability).
+The value remains unchanged, but the type of the expression is now [nullable](types.md#nullability).
 Its syntax is `$Exp?`, for example `read ./name.txt == "Bob"?`.
 
 It is an error to use this expression on an expression that was nullable already.
@@ -130,7 +130,7 @@ It is an error to use this expression on an expression that was nullable already
 
 Make non-nullable is expressed as an exclamation mark after an expression.
 As its name suggests, it makes a nullable expression non-nullable.
-The value remains unchanged, but the type of the expression is now [non-nullable](../types#nullability).
+The value remains unchanged, but the type of the expression is now [non-nullable](types.md#nullability).
 Its syntax is `$Exp!`, for example `read file!`.
 
 It is an error to use this expression on an expression that was non-nullable already.
@@ -139,7 +139,7 @@ It is an error to use this expression on an expression that was non-nullable alr
 ## Not
 
 Logical negation.
-It takes a [boolean](../types#bool) expression and returns the opposite boolean value.
+It takes a [boolean](types.md#bool) expression and returns the opposite boolean value.
 Its syntax is `!$Exp`, for example `if (!exists file) fail "$file should exist`.
 
 
@@ -182,9 +182,9 @@ The add operator is an overloaded in the PIE DSL.
 Its syntax is `$Exp + $Exp`.
 
 The type of adding two values depends on their static types.
-Adding two [`int`s](../types#int) uses mathematical plus: `1 + 2 // result: 3`, and the result is an `int` as well.
+Adding two [`int`s](types.md#int) uses mathematical plus: `1 + 2 // result: 3`, and the result is an `int` as well.
 
-Adding any value to a [`string`](../types#string) converts the value to a `string` and then concatenates the strings, resulting in a `string`: `"The value is:"  + x`.
+Adding any value to a [`string`](types.md#string) converts the value to a `string` and then concatenates the strings, resulting in a `string`: `"The value is:"  + x`.
 ??? tip "String interpolation"
     It might be clearer to use [string interpolation.](#string)
 
@@ -205,7 +205,7 @@ Finally, adding a type `T2` to a list with type `T1*` has two cases
     This allows it to give a warning when concatenating an empty list: `[1, 2, 3] + []` will give a warning.
 - All other cases will append the second item to the first list.
   `T2` must be a (non-strict) subtype of `T1`.
-  The element type of the resulting list is `T1`, unless `T2` is [the null type](../types#null-type).
+  The element type of the resulting list is `T1`, unless `T2` is [the null type](types.md#null-type).
   In that case, the element type of the resulting list is nullable as well.
 
 
@@ -213,7 +213,7 @@ Finally, adding a type `T2` to a list with type `T1*` has two cases
 
 Value declarations declare one or more named values.
 Expressions that are evaluated afterwards in the same scope or an inner scope can use the declared values by [referencing them](#value-reference).
-For more information on values, see [parameters and values](../functions#parameters-and-values).
+For more information on values, see [parameters and values](functions.md#parameters-and-values).
 
 A basic value declaration declares a name with a value: `val x = 9`.
 It is possible to give a type hint with the name: `val y: int? = 8`.
@@ -260,11 +260,11 @@ func incrementInefficiently(x: int) -> int = {
 
 An if expression conditionally evaluates an expression.
 It takes two expressions.
-The first one is the condition and is of type [boolean](../types#bool).
+The first one is the condition and is of type [boolean](types.md#bool).
 The second one is the body and can have any type.
 Its syntax is `if ($Exp) $Exp`, for example `if (text == null) fail "Could not read $file"`.
 If the condition evaluates to `true`, the body is evaluated, otherwise not.
-The type of an `if` expression is [the `unit` type](../types#unit).
+The type of an `if` expression is [the `unit` type](types.md#unit).
 The condition and body are evaluated in their own scope, so value declarations in an `if` expression are not visible after the `if`.
 Because an if expression is evaluated in its own scope and always returns the same value, the only use for an `if` expression is if the body has side-effects.
 
@@ -272,7 +272,7 @@ Because an if expression is evaluated in its own scope and always returns the sa
 
 Conditionally evaluates one of two expressions.
 It takes three expressions.
-The first one is the condition and is of type [boolean](../types#bool).
+The first one is the condition and is of type [boolean](types.md#bool).
 The second one is the true-branch and can have any type.
 The third one is the false-branch and can also have any type.
 Its syntax is `if ($Exp) $Exp else $Exp`, for example `if (name != null) name else default`.
@@ -336,13 +336,13 @@ The type of the full list comprehension is a list of the type that was mapped to
 
 ## Function calls
 
-Function calls [invoke a declared function](../functions#function-invocations).
+Function calls [invoke a declared function](functions.md#function-invocations).
 They have the syntax `$ModuleList$FUNCID$TypeArgs($Exps)`, for example `stdLib:okResult<string>("Hello world!")`.
-The second element is the [function name](../functions#name).
+The second element is the [function name](functions.md#name).
 This function name can either be qualified or left unqualified by the module list.
-If it is unqualified, the function name must be defined in the current module or be imported with a [function import](../modules#function-imports).
-If it is qualified, [the function is looked up in that module](../modules#qualified-calls).
-The number of type arguments must match the number of [type parameters on the function declaration](../functions#type-parameters), and the type arguments must be within bounds for the type parameters.
+If it is unqualified, the function name must be defined in the current module or be imported with a [function import](modules.md#function-imports).
+If it is qualified, [the function is looked up in that module](modules.md#qualified-calls).
+The number of type arguments must match the number of [type parameters on the function declaration](functions.md#type-parameters), and the type arguments must be within bounds for the type parameters.
 The expressions are the arguments to the function.
 They must match the number of parameters that the function declared and they must be subtypes of the parameters.
 
@@ -378,19 +378,19 @@ The type of a call is the type of the declared function, where type parameters a
 
 ## Method calls
 
-Method calls [invoke](../functions#function-invocations) a [declared method](../types#methods-and-overriding).
+Method calls [invoke](functions.md#function-invocations) a [declared method](types.md#methods-and-overriding).
 They have the syntax `$Exp.$FUNCID$TypeArgs($Exps)`, for example `file.replaceExtension("pp.pie")`.
 The first element is an arbitrary expression.
 The second element is the method name.
 This method is looked up on the type of the first expression.
-The number of type arguments must match the number of [type parameters on the method declaration](../functions#type-parameters), and the type arguments must be within bounds for the type parameters.
+The number of type arguments must match the number of [type parameters on the method declaration](functions.md#type-parameters), and the type arguments must be within bounds for the type parameters.
 The expressions are the arguments to the method.
 They must match the number of parameters that the method declared and they must be subtypes of the parameters.
 
 The type of a method call is the type of the declared method, where type parameters are replaced with their corresponding type arguments.
 
 ??? note "No methods on nullable types"
-    There are no methods defined on [nullable types](../types#nullable-types).
+    There are no methods defined on [nullable types](types.md#nullable-types).
     To access the methods of the inner type, [cast the expression to non-nullable](#make-non-nullable) first:
     ```
     val maybe: Result<string, _ : Exception> = null;
@@ -451,7 +451,7 @@ The type of a method call is the type of the declared method, where type paramet
 
 ## create supplier
 
-[A supplier](../types#supplier) for a value can be created with the `supplier` keyword.
+[A supplier](types.md#supplier) for a value can be created with the `supplier` keyword.
 It has the syntax `supplier$TypeArgs($Exps)`, for example `supplier(47)` or `supplier<string>("Hello world!")`.
 The type arguments can either be omitted or must be a single type argument.
 The expressions are the arguments for the supplier.
@@ -467,14 +467,14 @@ The type of a supplier creation expression is `supplier<T>`.
 
 ## task supplier
 
-A task supplier expression creates a [supplier](../types#supplier) from a function.
+A task supplier expression creates a [supplier](types.md#supplier) from a function.
 A task supplier expression does not execute the task yet, but instead defers it until the supplier's `get` method is called.
 It has the syntax `$ModuleList$FUNCID.supplier$TypeArgs($Exps)`, for example `lang:java:parse.supplier(file)`.
-The second element is the [function name](../functions#name).
+The second element is the [function name](functions.md#name).
 This function name can either be qualified or left unqualified by the module list.
-If it is unqualified, the function name must be defined in the current module or be imported with a [function import](../modules#function-imports).
-If it is qualified, [the function is looked up in that module](../modules#qualified-calls).
-The number of type arguments must match the number of [type parameters on the function declaration](../functions#type-parameters), and the type arguments must be within bounds for the type parameters.
+If it is unqualified, the function name must be defined in the current module or be imported with a [function import](modules.md#function-imports).
+If it is qualified, [the function is looked up in that module](modules.md#qualified-calls).
+The number of type arguments must match the number of [type parameters on the function declaration](functions.md#type-parameters), and the type arguments must be within bounds for the type parameters.
 The expressions are the arguments to the function.
 They must match the number of parameters that the function declared and they must be subtypes of the parameters.
 
@@ -482,7 +482,7 @@ The type of a task supplier expression is `supplier<T>`, where `T` is the type o
 
 ## requires
 
-A requires expression expresses that the current task depends on the given [path](../types#path).
+A requires expression expresses that the current task depends on the given [path](types.md#path).
 It has the syntax `requires $Exp $FilterPart? $StamperPart?`, for example `requires ./metaborg.yaml by hash` or `requires sampleDir with extension "sdf3"`.
 The expression is the path to depend on.
 The filter part is optional and adds a filter to filter out any paths that do not match the filter.
@@ -490,7 +490,7 @@ It is described in [the section on common lexical elements](#filter-and-filterpa
 The stamper part is also optional and provides a way to determine if a file or path is up-to-date.
 It is also described in [the section on common lexical elements](#stamper-stamperpart-and-stamperkind).
 
-The type and value of the expression is [unit](../types#unit).
+The type and value of the expression is [unit](types.md#unit).
 
 !!! todo "Exceptions?"
     What happens if there is another task that provides the path? Does it quietly schedule that task before this one, does it throw an error? What if that other task runs after this task?
@@ -498,13 +498,13 @@ The type and value of the expression is [unit](../types#unit).
 
 ## generates
 
-Marks the given [path](../types#path) as provided by the current task.
+Marks the given [path](types.md#path) as provided by the current task.
 It has the syntax `generates $Exp $StamperPart?`, for example `generates file by hash`.
 The expression is the path to depend on.
 The stamper part is optional and provides a way to determine if a file or path is up-to-date.
 It is described in [the section on common lexical elements](#stamper-stamperpart-and-stamperkind).
 
-The type and value of this expression is [unit](../types#unit).
+The type and value of this expression is [unit](types.md#unit).
 
 !!! attention "Make file modifications before using this expression"
     The contents or metadata of the file at the time that this expression is called may be cached and used for incrementality.
@@ -526,11 +526,11 @@ The type and value of this expression is [unit](../types#unit).
 
 Lists direct children of the given directory.
 List expressions have the syntax `list $Exp $FilterPart?`, for example `list getProjectRootDir() + ./examples with extension "pie"`.
-The expression must have type [path](../types#path) and refer to an existing directory.
+The expression must have type [path](types.md#path) and refer to an existing directory.
 The filter part is optional and adds a filter to filter out any paths that do not match the filter.
 It is described in [the section on common lexical elements](#filter-and-filterpart).
 
-A list expression returns a [list](../types#lists) of the direct children of the given directory, and its type is `path*`.
+A list expression returns a [list](types.md#lists) of the direct children of the given directory, and its type is `path*`.
 
 !!! tip "Declaring a dependency on the directory"
     You will likely need to declare a dependency on the directory using [requires](#requires).
@@ -549,11 +549,11 @@ A list expression returns a [list](../types#lists) of the direct children of the
 
 Recursively gets descendants of the given directory.
 Walk expressions have the syntax `walk $Exp $FilterPart?`, for example `walk getProjectRootDir() + ./src/test/java with extension "java"`.
-The expression must have type [path](../types#path) and refer to an existing directory.
+The expression must have type [path](types.md#path) and refer to an existing directory.
 The filter part is optional and adds a filter to filter out any files that do not match the filter.
 It is described in [the section on common lexical elements](#filter-and-filterpart).
 
-A walk expression returns a [list](../types#list) of all the files in the given directory and its descendants, and its type is `path*`.
+A walk expression returns a [list](types.md#list) of all the files in the given directory and its descendants, and its type is `path*`.
 
 !!! tip "Declaring a dependency on the directory"
     You will likely need to declare a dependency on the directory and all subdirectories using [requires](#requires).
@@ -574,15 +574,15 @@ A walk expression returns a [list](../types#list) of all the files in the given 
 
 Checks if a file or folder exists.
 The syntax is `exists $Exp`, for example `exists ./config.json`.
-The expression is the [path](../types#path) for which it should be checked if it exists.
-It returns a [boolean](../types#bool) indicating whether the file or path exists.
+The expression is the [path](types.md#path) for which it should be checked if it exists.
+It returns a [boolean](types.md#bool) indicating whether the file or path exists.
 
 
 ## read
 
-Reads the contents of the given file into a [string](../types#string).
+Reads the contents of the given file into a [string](types.md#string).
 The syntax is `read $Exp`, for example `read pie.sdf3`.
-The expression is the file to be read, with type [path](../types#path).
+The expression is the file to be read, with type [path](types.md#path).
 The file is read with the system default file encoding.
 It returns a string with the contents of the file.
 
@@ -592,12 +592,12 @@ It returns a string with the contents of the file.
 Returns from the current function with the provided value.
 Its syntax is `return $Exp`, for example `return true` or `return errResult<FileNotFoundException>(createFileNotFoundException("could not find $file"))`.
 The expression is evaluated and its value returned.
-The type of the expression should be a subtype of the declared [return type of the current function](../functions#return-type).
+The type of the expression should be a subtype of the declared [return type of the current function](functions.md#return-type).
 
-The type of a return expression is [unit](../types#unit).
+The type of a return expression is [unit](types.md#unit).
 
 ??? attention "Type may get changed to bottom type"
-    The type of a return expression may be changed to [the bottom type](../types#bottom) in the future.
+    The type of a return expression may be changed to [the bottom type](types.md#bottom) in the future.
     This would allow using a return expression as a branch in an if-else expression.
 
 
@@ -606,12 +606,12 @@ The type of a return expression is [unit](../types#unit).
 Throws an `ExecException` with the provided `string` as message.
 This exits the function, any code after this expression is not evaluated.
 Its syntax is `fail $Exp`, for example `fail "Could not open $file, it does not exist"`
-The expression is the message for the exception and must be of type [string](../types#string).
+The expression is the message for the exception and must be of type [string](types.md#string).
 
-The type of a fail expression is [unit](../types#unit).
+The type of a fail expression is [unit](types.md#unit).
 
 ??? attention "Type may get changed to bottom type"
-    The type of a fail expression may be changed to [the bottom type](../types#bottom) in the future.
+    The type of a fail expression may be changed to [the bottom type](types.md#bottom) in the future.
     This would allow using a fail expression as a branch in an if-else expression.
 
 ??? tip "consider using `Result<T, E>`"
@@ -621,21 +621,21 @@ The type of a fail expression is [unit](../types#unit).
 
 ## Unit literal
 
-`unit` is a literal expression of the only value of the [unit type](../types#unit).
+`unit` is a literal expression of the only value of the [unit type](types.md#unit).
 
 
 ## True
 
-`true` is the literal expression for one of the two values of the [boolean type](../types#boolean).
+`true` is the literal expression for one of the two values of the [boolean type](types.md#boolean).
 
 ## False
 
-`false` is the literal expression for one of the two values of the [boolean type](../types#boolean).
+`false` is the literal expression for one of the two values of the [boolean type](types.md#boolean).
 
 
 ## int literal
 
-Int literals are a literal value of the [int type](../types#int).
+Int literals are a literal value of the [int type](types.md#int).
 Their syntax is `"-"? [0-9]+`, for example `0`, `1`, `2`, `-1`, `47` and `-30774`.
 That is an optional dash (unary minus, `-`), followed by some digits.
 This syntax is lexical, meaning that there cannot be any layout between the sign or digits.
@@ -674,13 +674,13 @@ This syntax is lexical, meaning that there cannot be any layout between the sign
 
 ## null
 
-`null` is the value that is added by making a type [nullable](../types#nullable-types).
-It is also a value of the [top type](../types#top).
+`null` is the value that is added by making a type [nullable](types.md#nullable-types).
+It is also a value of the [top type](types.md#top).
 
 
 ## Tuple literal
 
-Tuple literals express literal values of the [tuple type](../types#tuples).
+Tuple literals express literal values of the [tuple type](types.md#tuples).
 Their syntax is `($Exps)`, for example `("scala", "VF_SCALA", walk (subjectScalaSrcDir + ./lib/scala.jar))`.
 The expressions are the elements of the tuple.
 There must be at least two elements.
@@ -689,7 +689,7 @@ The type of a tuple literal is the tuple type of the types of the elements, so t
 ??? note "Tuples with less than two elements"
     It is not possible to express tuples with zero or a single element.
     Zero element tuples cannot be expressed by design.
-    Their common use case as a [unit type](../types#unit) is covered by the [unit literal](#unit-literal) instead.
+    Their common use case as a [unit type](types.md#unit) is covered by the [unit literal](#unit-literal) instead.
     Single element tuples will be parsed as a [bracketed expression](#expressions) instead.
 
 ??? tip "Tuple literals from subtype elements"
@@ -722,7 +722,7 @@ The type of a tuple literal is the tuple type of the types of the elements, so t
     This section is about defining list literals.
     For information on the `list` keyword, see [list expressions](#list), which list the children of a directory.
 
-Define a literal [list](../types#lists) value.
+Define a literal [list](types.md#lists) value.
 The syntax is `[$Exps]`, for example `[1, 2, 3]`, or `[apple, banana, pear]`.
 The expressions are the elements of the list.
 The least upper bound of the types of the expressions is the list element type `T`.
@@ -731,13 +731,13 @@ The list element type must not be the top type.
 
 ??? attention "Empty list literals may lead to Java errors"
     The empty list literal `[]` has a special type for implementation reasons.
-    It compiles to a list with the [bottom type](../types#bottom).
+    It compiles to a list with the [bottom type](types.md#bottom).
     As such, the generated Java code may have compile errors.
 
 
 ## String literal
 
-Define a literal value of type [string](../types#string).
+Define a literal value of type [string](types.md#string).
 The syntax is `"$StrParts"`, where `$StrParts` are parts of the string.
 String parts are lexical, which means that there cannot be any layout between them (layout between string parts will be part of the string).
 The possible string parts are:
@@ -762,7 +762,7 @@ All of the string parts are concatenated into a single string value without sepa
 
 ## path literal
 
-Define a literal value of type [path](../types#path).
+Define a literal value of type [path](types.md#path).
 The syntax is `$PathStart$PathParts`, for example `/home/alice/very-important-documents` or `./src/test/resources/`.
 `$PathStart` is either `/` for absolute paths or `./` for relative paths.`$PathParts` are parts of the path.
 Path start and path parts are lexical, which means that there cannot be any layout between them (layout between path parts will result in parse errors).
@@ -805,11 +805,11 @@ The possible filters are listed in the table below.
 
 | name | expression | description |
 | --- | --- | --- |
-| Regex | `regex $Exp` | Keeps files if they match the provided regular expression. The expression must be a [string](../types#string) representing a regular expression. Todo: Figure out what exactly it matches on (full path, name, includes extension?), regex flavor (Java, some other kind?) |
-| Pattern | `pattern $Exp` | Keeps files if the name contains the provided string. The expression must be a [string](../types#string). TODO: I assume that this only needs to match part of the name and does not include the extension |
-| Patterns | `patterns $Exp` | Keeps files if the name contains any of the provided strings. The expression must be a [list](../types#list) of [strings](../types#string). TODO: I assume that this only needs to match part of the name and does not include the extension |
-| Extension | `extension $Exp` | Keeps files if the file extension matches the provided string. The extension must match the string exactly, so `pie` is different from `PIE` and `PIE-simple`. The string should not include the period (`.`) separating the filename and the file extension. The expression must be a [string](../types#string). TODO: I assume that it needs to be an exact match. Can it match `pp.pie`? |
-| Extensions | `extensions $Exp` | Keeps files if the file extension matches any of the provided strings. The extension must match one of the strings exactly, so `pie` is different from `PIE` and `PIE-simple`. The strings should not include the period (`.`) separating the filename and the file extension. The expression must be a [list](../types#list) of [strings](../types#string). TODO: I assume that it needs to be an exact match. Can it match `pp.pie`? |
+| Regex | `regex $Exp` | Keeps files if they match the provided regular expression. The expression must be a [string](types.md#string) representing a regular expression. Todo: Figure out what exactly it matches on (full path, name, includes extension?), regex flavor (Java, some other kind?) |
+| Pattern | `pattern $Exp` | Keeps files if the name contains the provided string. The expression must be a [string](types.md#string). TODO: I assume that this only needs to match part of the name and does not include the extension |
+| Patterns | `patterns $Exp` | Keeps files if the name contains any of the provided strings. The expression must be a [list](types.md#list) of [strings](types.md#string). TODO: I assume that this only needs to match part of the name and does not include the extension |
+| Extension | `extension $Exp` | Keeps files if the file extension matches the provided string. The extension must match the string exactly, so `pie` is different from `PIE` and `PIE-simple`. The string should not include the period (`.`) separating the filename and the file extension. The expression must be a [string](types.md#string). TODO: I assume that it needs to be an exact match. Can it match `pp.pie`? |
+| Extensions | `extensions $Exp` | Keeps files if the file extension matches any of the provided strings. The extension must match one of the strings exactly, so `pie` is different from `PIE` and `PIE-simple`. The strings should not include the period (`.`) separating the filename and the file extension. The expression must be a [list](types.md#list) of [strings](types.md#string). TODO: I assume that it needs to be an exact match. Can it match `pp.pie`? |
 
 !!! todo
     Find exact semantics for the filters.

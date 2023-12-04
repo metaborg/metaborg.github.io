@@ -4,7 +4,7 @@ This page describes the options in the `metaborg.yaml` file of a language
 specification project. A language specification project is a project that
 contains a language specification, which contain programs of meta-languages,
 intended to be developed by a language developer. It is a specialization of an
-end-user project, so all configuration options from [end-user projects](./project)
+end-user project, so all configuration options from [end-user projects](project.md)
 can also be used in language specification projects.
 
 The following configuration options are mandatory:
@@ -31,7 +31,7 @@ values when not specified:
 ## `dependencies`
 
 Compile and source dependencies to other language components, and
-dependencies to Java artifacts. See the [end-user projects](./project) page for
+dependencies to Java artifacts. See the [end-user projects](project.md) page for
 more information.
 
 ## `metaborgVersion`
@@ -293,8 +293,7 @@ Version of sdf2table to use.
 #### `jsglr-version`
 
 Version of the JGSLR parser to use. The options listed after `v2` are
-extensions of `v2`, [which are described
-here](..syntax/configuration). Note that
+extensions of `v2`, [which are described here](../sdf3/configuration.md). Note that
 some of these extensions are experimental.
 
 -   Format: Either `v1`, `v2`, `data-dependent`, `incremental`,

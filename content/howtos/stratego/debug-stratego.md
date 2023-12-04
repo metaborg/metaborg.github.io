@@ -31,7 +31,7 @@ translate :: Exp -> List(Instr)
 
 Define type signatures for transformations.
 
-Starting with Stratego2, the language supports the definition of [type signatures for transformations](../../references/stratego/types.md/#transformation-types).
+Starting with Stratego2, the language supports the definition of [type signatures for transformations](../../references/stratego/types.md#transformation-types).
 This will catch many obvious errors.
 
 
@@ -44,7 +44,7 @@ translate :
   with <translate> e2 => instrs2
 ```
 
-The [with](/references/stratego/rewrite-rules.md/#with-condition) clause expresses that you expect a premisse of a rewrite rule to succeed in all cases.
+The [with](../../references/stratego/rewrite-rules.md#with-condition) clause expresses that you expect a premisse of a rewrite rule to succeed in all cases.
 When this expectation is violated, the rule will throw an exception and display a stack trace, instead of silently failing.
 
 

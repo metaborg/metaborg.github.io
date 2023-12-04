@@ -36,11 +36,11 @@ type `string`.
 Variables are identifiers of values of the following form: `[a-zA-Z] [a-zA-Z0-9\_]* [\']*`.
 
 With respect to type-checking, variables can be handled in two ways. When a variable
-occurs in the [head of a rule](../rules#rule-definitions), it is implicitly
+occurs in the [head of a rule](rules.md#rule-definitions), it is implicitly
 brought into scope with the type inferred from the rule type. Otherwise, it is
 required that the variable is introduced earlier, with the correct type.
 Apart from introduction in rule heads, variables can be introduced by
-[existential constraints](../basic-constraints#exists). In that case, the type
+[existential constraints](basic-constraints.md#exists). In that case, the type
 of the variable is derived from its usage. Rule patterns may be non-linear
 (containing multiple occurrences of a variable), variables in an existential
 must be unique. That is, the constraint `{x x} ...`  will give a type error.
@@ -147,12 +147,12 @@ $Var@$Term
 ```
 
 Note that this does _not_ introduce a new variable with name `$Var` (except in a
-[rule head](../rules#rule-definitions), where all variables are introduced
+[rule head](rules.md#rule-definitions), where all variables are introduced
 implicitly), but rather requires that a variable with corresponding name and type
 is already introduced.
 
 ??? tip "Ascribe and Equality"
-    In terms of [equality constraints](../basic-constraints#equality), the ascribe
+    In terms of [equality constraints](basic-constraints.md#equality), the ascribe
     is equal to `$Var == $Term`. It is used to prevent the duplication of `$Term`.
 
 
@@ -182,10 +182,10 @@ Arithmetic expressions can be inserted in terms as follows:
 ```
 
 Here, the type of the expression is `int`. For more information on arithmetic
-expressions, see [Arithmetic Constraints](../basic-constraints#arithmetic-constraints)
+expressions, see [Arithmetic Constraints](basic-constraints.md#arithmetic-constraints)
 
 ??? tip "Normalization"
-    In terms of [existential constraints](../basic-constraints#exists), inline
+    In terms of [existential constraints](basic-constraints.md#exists), inline
     arithmetic expressions have behavior equal to `{v} v #= $ArithExp`, where `v`
     is used at the position of the arithmetic expression. So, for example,
     `{T} T == CONS(#(21 * 2))` is equal to `{T v} v #= 21 * 2, T == CONS(v)`.
@@ -201,12 +201,12 @@ astId($Term)
 ```
 
 Here, the type of `$Term` can be anything, and the type of the whole term will
-be `astId`. AST Identifiers are used to assign [properties](../basic-constraints#ast-property).
+be `astId`. AST Identifiers are used to assign [properties](basic-constraints.md#ast-property).
 
 
 ## New
 
-Statix allows inline creation of [scopes](../scope-graphs#scopes):
+Statix allows inline creation of [scopes](scope-graphs.md#scopes):
 
 ```statix
 new
@@ -216,7 +216,7 @@ Statically, the `new` term has type `scope`. At runtime, this creates a fresh
 scope, and inserts that at the position of the `new` term.
 
 ??? tip "Normalization"
-    In terms of [existential constraints](../basic-constraints#exists), the inline
+    In terms of [existential constraints](basic-constraints.md#exists), the inline
     `new` operator has behavior equal to `{s} new s`, where `s` is used at the
     position of the `new` term. So, for example, `{T} T == CLASS(new)` is equal
     to `{T s} new s, T == CLASS(s)`.
@@ -224,7 +224,7 @@ scope, and inserts that at the position of the `new` term.
 
 ## Paths
 
-Part of a [query result](../queries#result-pattern) is the path from the resolved
+Part of a [query result](queries.md#result-pattern) is the path from the resolved
 datum back to the scope where the query started. In order to represent paths,
 Statix has two built-in constructors:
 
@@ -264,7 +264,7 @@ $NamespaceId{ $SpaceTerms }
 
 The default occurrence identifier is `-`, which means that the occurrence has no
 identifier. The type of an occurrence literal is `occurrence`. For more information
-about namespaces, see the [Queries](../queries) section.
+about namespaces, see the [Queries](queries.md) section.
 
 
 ## Declaration Match
@@ -279,9 +279,9 @@ When using this expression, a _functional_ relation `$RelationId` must be declar
 The terms arguments must correspond to the argument of the relation, and the
 type of the term is the output type of the relation.
 
-For more information on querying the scope graph, see the [Queries](../queries) section.
+For more information on querying the scope graph, see the [Queries](queries.md) section.
 
 ??? tip "Declaration Match as Query"
-    In terms of [regular queries](../queries), the declaration match is equal
+    In terms of [regular queries](queries.md), the declaration match is equal
     to a query with filter `e`, expecting a single output. E.g. `T == ?var["x"] in s`
     is equal to `query var filter e and { x' :- x' == "x" } in s |-> [(_, (_, T))]`.

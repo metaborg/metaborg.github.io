@@ -15,7 +15,7 @@ Statix specifications are organised in [modules](modules.md). In Statix, program
 
 Type-checking is closely related to, and strongly intertwined with, name resolution. For that reason, Statix has built-in support for modelling name binding patterns in the form of [scope graphs](scope-graphs.md). During type-checking, names can be resolved using [queries](queries.md).
 
-When transforming programs using in [Stratego](../stratego), Statix specifications can be executed, and the results accesssed using the [Stratego API for Statix](stratego-api.md).
+When transforming programs using in [Stratego](../stratego/index.md), Statix specifications can be executed, and the results accesssed using the [Stratego API for Statix](stratego-api.md).
 
 Statix has a special [test format](tests.md), which can be used for isolating issues in a specification, or in the Statix ecosystem.
 

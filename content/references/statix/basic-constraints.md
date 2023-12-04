@@ -1,12 +1,12 @@
 # Basic Constraints
 
-As mentioned in the [Language Concepts](../language-concepts) section, the core
+As mentioned in the [Language Concepts](concepts.md) section, the core
 idea of Statix is to see a type-checking problem as a constraint solving problem.
 Therefore, it is crucial to be able to express constraints in a specification.
 
 In this section, we discuss all constraints that are not related to scope graphs.
 These constraints are explained in-depth in the sections on [Scope Graph
-Construction](../scope-graphs) and [Queries](../queries).
+Construction](scope-graphs.md) and [Queries](queries.md).
 
 
 ## True
@@ -112,7 +112,7 @@ first argument. The type of the first argument may be anything, but the type of
 the second argument is `astId`.
 
 !!! tip
-    Often, using an [`astId` _term_](../terms#ast-identifier) will read more natural.
+    Often, using an [`astId` _term_](terms.md#ast-identifier) will read more natural.
 
 
 ## AST Property
@@ -125,7 +125,7 @@ the second argument is `astId`.
 Statix allows to set properties on AST nodes. These properties can be used to
 communicate typing results to the outside world, for example to be used in
 a transformation. For more information on reading these properties, please refer
-to the [Stratego API documentation](../stratego-api).
+to the [Stratego API documentation](stratego-api.md).
 
 The first term is the term (usually an AST node) on which the property is set.
 
@@ -199,7 +199,7 @@ the constraint to fail.
     As discussed, Statix has a special syntactic category for arithmetic expressions.
     Therefore, arithmetic expressions cannot be used at regular term positions.
     Instead, arithmetic expressions can be embedded in terms using the
-    [Arithmetic Expressions](../terms#arithmetic-operations) term syntax.
+    [Arithmetic Expressions](terms.md#arithmetic-operations) term syntax.
 
 ??? note "Java Integers"
     Arithmetic Expressions are implemented using standard Java integers, and hence
@@ -220,7 +220,7 @@ First, the `$Severity` indicates the severity of a message. It may be either
 issued for failing [`try`](#try) constraints.
 
 Second, the error message string is provided. This message string may be a regular
-[string literal](../terms#strings) or a template literal. Template literals
+[string literal](terms.md#strings) or a template literal. Template literals
 look as follows:
 
 ```statix
@@ -234,7 +234,7 @@ where square brackets and backslashes must be escaped with a backslash. Just as
 regular string literals, tabs, newlines and carriage returns can be encoded with
 `\t`, `\n` and `\r`, respectively.
 
-[Terms](../terms) can be inserted in a message template by surrounding them with
+[Terms](terms.md) can be inserted in a message template by surrounding them with
 (unescaped) square brackets: `[$Term]`. The term may have any type, but must be
 well-formed according to the regular typing rules for terms.
 

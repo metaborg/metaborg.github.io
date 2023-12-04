@@ -13,8 +13,8 @@ $Symbol.$Constructor = $Symbol*
 A production is read as the definition.
 The symbol on the left-hand side is defined by the right-hand side of the production.
 
-Productions are used to describe [lexical](../lexical-syntax/), [context-free](../context-free-syntax/), and [kernel](../kernel-syntax/) syntax.
-Productions may also occur in [priority sections](../disambiguation/#priorities), but might also be referred to by its ``$Symbol.$Constructor``.
+Productions are used to describe [lexical](lexical-syntax.md), [context-free](context-free-syntax.md), and [kernel](kernel-syntax.md) syntax.
+Productions may also occur in [priority sections](disambiguation.md#priorities), but might also be referred to by its ``$Symbol.$Constructor``.
 All productions with the same symbol together define the alternatives for that symbol.
 
 
@@ -33,6 +33,6 @@ $Sort.$Constructor = $Symbol* { $Attribute1, $Attribute2, ...}
 The following syntax-related attributes exist:
 
 -  ``bracket`` is an important attribute in combination with priorities. The parenthesizer tool uses the ``bracket`` attribute to find productions to add to a parse tree before pretty printing (when the tree violates priority constraints). Note that most of these tools demand the production with a ``bracket`` attribute to have the shape: ``X = "(" X ")" {bracket}`` with any kind of bracket syntax but the ``X`` being the same symbol on the left-hand side and the right-hand side. The connection with priorities and associativity is that when a non-terminal is disambiguated using either of them, a production rule with the ``bracket`` attribute is probably also needed.
--  ``reject`` is a disambiguation construct that implements language difference. It is used for keyword reservation. See [Disambiguation#Rejections](../disambiguation/#rejections).
--  ``left``, ``right``, ``non-assoc``, ``assoc`` are disambiguation constructs used to define the associativity of productions. See [Disambiguation#Associativity](../disambiguation/#associativity).
--  ``prefer`` and ``avoid`` are **deprecated** disambiguation constructs to define preference of one derivation over others. See [Disambiguation#Preferences](../disambiguation/#preference).
+-  ``reject`` is a disambiguation construct that implements language difference. It is used for keyword reservation. See [Disambiguation#Rejections](disambiguation.md#rejections).
+-  ``left``, ``right``, ``non-assoc``, ``assoc`` are disambiguation constructs used to define the associativity of productions. See [Disambiguation#Associativity](disambiguation.md#associativity).
+-  ``prefer`` and ``avoid`` are **deprecated** disambiguation constructs to define preference of one derivation over others. See [Disambiguation#Preferences](disambiguation.md#preference).
