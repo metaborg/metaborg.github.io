@@ -151,29 +151,23 @@ When adding a new submodule to the [`spoofax-releng`](https://github.com/metabor
 ## Updating the Release Archive
 To update the release archive of this documentation site, perform the following steps after a release:
 
-- [ ] Update include files:
-    - [ ] Copy `include/hyperlink/download-<current-release-version>.rst` to new file `include/hyperlink/download-<release-version>.rst`, replace all instances of `<current-release-version>` in that new file with `<release-version>`, and update the date to the current date.
-    - [ ] In `include/hyperlink/download-rel.rst`, replace all instances of `<current-release-version>` with `<release-version>`.
-    - [ ] In `include/hyperlink/download-dev.rst`, update the development version to `<next-development-version>`.
-    - [ ] In `include/_all.rst`, add a new line to include the newly copied file:
-    ```
-    .. include:: /include/hyperlink/download-<release-version>.rst.
-    ```
-- [ ] Update `source/release/migrate/<release-version>.rst` (only if migrations are necessary):
+- [ ] Copy `content/release/migrate/vnext.rst` to `content/release/migrate/<release-version>.rst` (only if migrations are necessary):
     - [ ] Remove stub notice.
-- [ ] Update `source/release/note/<release-version>.rst`:
+- [ ] Copy `content/release/note/vnext.rst` to `content/release/note/<release-version>.rst`:
+    - [ ] Change vNext in the heading into `<release-version> (<current-date(DD-MM-YYYY)>)`
     - [ ] Remove stub notice.
+    - [ ] Remove the link to the migration guide is not applicable.
     - [ ] Add small summary of the release as an introduction.
-    - [ ] Include download links, which can be copied and have their versions replaced from a previous release.
-- [ ] Create new stub files for the next release:
-    - [ ] Create a new migration guide stub file.
-    - [ ] Create a new release notes stub file.
-- [ ] Update `source/release/note/index.rst`:
+    - [ ] Add download links inclusion based on `<release-version>`, see the code in a previous release.
+- [ ] Reset the `vnext.md` files:
+    - [ ] Make a stubbed migration guide.
+    - [ ] Make a stubbed release notes.
+- [ ] Update `content/release/note/index.rst`:
     - [ ] Move stub for this release to the top of the notes.
     - [ ] Add new stub file at the bottom of the notes.
-- [ ] Update `source/release/migrate/index.rst`:
-    - [ ] Move stub for this release to the top of the migration guides.
-    - [ ] Add new stub file at the bottom of the migration guides.
-- [ ] Update `conf.py`:
-    - [ ] Update `version` variable.
-    - [ ] Update `copyright`variable with new year, if needed.
+- [ ] Update `mkdocs.yml`:
+    - [ ] Add the new migration guide to the navigation if applicable.
+    - [ ] Add the new release notes to the navigation.
+    - [ ] Update the copyright with new year, if needed.
+- [ ] Update `tools/macro.py`:
+    - [ ] Add the release and the date to `release_versions`.
