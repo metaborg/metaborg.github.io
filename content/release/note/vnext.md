@@ -9,6 +9,7 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 ### Statix
 
 - Multi-file projects using the traditional solver can now use scope graph libraries (i.e., scope graphs exported from other projects).
+- Multi-file projects using the traditional solver can now have separate constraints for groups (i.e., packages derived from a directory structure).
 
 ## Changes
 
