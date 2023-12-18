@@ -12,6 +12,7 @@ colorama>=0.4
 paginate>=0.5
 regex>=2022.4.24
 requests>=2.26
+setuptools>=65.6.3
 
 # Plugin dependencies
 mkdocs-macros-plugin==1.0.4
