@@ -1,7 +1,7 @@
 ---
-title: "Install on macOS M1, M2"
+title: "Install on macOS ARM (M1/M2/M3)"
 ---
-# How to install Spoofax on macOS ARM (M1, M2)
+# How to install Spoofax on macOS ARM (M1/M2/M3)
 Currently the Eclipse with bundled JRE does not yet support M1.  We recommend downloading [Spoofax Eclipse _without the embedded JRE_]({{ release.rel.eclipse.install.macos_64 }}).  Then either use the JDK 8 that is installed by default on macOS M1/M2, or install your own.
 
 To configure Eclipse to use an installed JDK:
