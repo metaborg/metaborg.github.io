@@ -8,6 +8,10 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 - The "new Spoofax project" wizard was broken in 2.5.19, where the `Next` and `Finish` buttons would be greyed out. This was a regression after moving away from directly depending on Guava, where an editor validation check accidentally checked the negation of the original check. So validation always failed. This had been fixed now.
 
+### Statix
+
+- `RuleUtil.inline` did not insert equalities for ascribed values (i.e., `t@Term(...)` rule arguments), which made the inlined version too weak.
+
 ## Added
 
 ### Statix
