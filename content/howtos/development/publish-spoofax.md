@@ -162,9 +162,6 @@ To update the release archive of this documentation site, perform the following 
 - [ ] Reset the `vnext.md` files:
     - [ ] Make a stubbed migration guide.
     - [ ] Make a stubbed release notes.
-- [ ] Update `content/release/note/index.rst`:
-    - [ ] Move stub for this release to the top of the notes.
-    - [ ] Add new stub file at the bottom of the notes.
 - [ ] Update `mkdocs.yml`:
     - [ ] Add the new migration guide to the navigation if applicable.
     - [ ] Add the new release notes to the navigation.
