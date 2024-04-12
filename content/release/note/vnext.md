@@ -25,3 +25,4 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 - Introduced `jsglr.shared` and moved a small part of `org.spoofax.jsglr` there so that `org.spoofax.jsglr2` can depend on only that shared code. This makes `org.spoofax.jsglr2` independent of `org.spoofax.jsglr`, lowering the number of dependencies if you only use `org.spoofax.jsglr2`.
 - `org.apache.commons:commons-configuration2`: 2.8.0 -> 2.10.1
+- `commons-configuration2-jackson`: 1.0.0 -> 1.3.1
