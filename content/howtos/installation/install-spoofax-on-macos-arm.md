@@ -63,14 +63,14 @@ Once installed, the `-vm` path in the Eclipse installation should be something l
 
 ```
 -vm
-/Users/myusername/.sdkman/candidates/java/11.0.18-tem/bin
+/Users/<USERNAME>/.sdkman/candidates/java/11.0.18-tem/bin
 ```
 
 Or alternatively, but perhaps less predictable, use whatever version is set as the _current_ default version of Java (using `sdk default java`):
 
 ```
 -vm
-/Users/myusername/.sdkman/candidates/java/current/bin
+/Users/<USERNAME>/.sdkman/candidates/java/current/bin
 ```
 
 

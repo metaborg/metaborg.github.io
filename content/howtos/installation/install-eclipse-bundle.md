@@ -45,11 +45,11 @@ xattr -rc Eclipse.app
 ```
 
 ### Eclipse does not start, or complains about missing Java
-Download the Eclipse bundle _with embedded JRE_. Otherwise, ensure you have [a distribution of Java][1] installed. Then in `eclipse.ini`, add a `-vm` line at the top of the file, followed by the path to the Java installation. For example, with [SDKMan!][2] on macOS:
+Download the Eclipse bundle _with embedded JRE_. Otherwise, ensure you have [a distribution of Java][1] installed. Then in `eclipse.ini`, add a `-vm` line at the top of the file, followed by the path to the Java installation. For example, with [SDKMan!][2] on macOS, where `<USERNAME>` is your username:
 
 ```
 -vm
-/Users/myusername/.sdkman/candidates/java/current/lib/jli/libjli.dylib
+/Users/<USERNAME>/.sdkman/candidates/java/current/lib/jli/libjli.dylib
 ```
 
 
