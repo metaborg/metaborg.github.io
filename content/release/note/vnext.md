@@ -9,4 +9,4 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 ## Added
 
 ## Changes
-
+- The value of `metaborgVersion` in `metaborg.yaml` is no longer hardcoded and must be specified explicitly in the `metaborg.yaml` file of a language project. See the migration guide.
