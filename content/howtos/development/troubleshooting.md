@@ -109,7 +109,7 @@ The path /var/folders/a_/foo0000bar/T/vfs_cache-345/tmp_123_macosx/sdf2table-mac
 is not shared from the host and is not known to Docker.
 ```
 
-Ensure the root of the path (`/var/folders` in this example) is shared in Docker for Mac. Go to Docker for Mac _Preferences_ ‣ _Resources_ ‣ _File Sharing_ and add the path to the list. The default list should contain:
+Ensure the root of the path (`/var/folders` in this example) is shared in Docker for Mac. Go to Docker for Mac `#!gui Preferences > Resources > File Sharing` and add the path to the list. The default list should contain:
 
 - `/Users`
 - `/Volumes`
@@ -125,4 +125,4 @@ bind source path does not exist:
 /var/folders/a_/foo0000bar/T/vfs_cache-345/tmp_123_macosx
 ```
 
-Ensure that both Docker and the terminal from which you are invoking the build have _full-disk access_. Go to macOS _Preferences_ ‣ _Security and Privacy_ ‣ _Full Disk Access_ and check the checkboxes next to _Docker_ and your terminal (_Terminal_ and/or _iTerm_).
+Ensure that both Docker and the terminal from which you are invoking the build have _full-disk access_. Go to macOS `#!gui Preferences > Security and Privacy > Full Disk Access` and check the checkboxes next to _Docker_ and your terminal (_Terminal_ and/or _iTerm_).

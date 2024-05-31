@@ -38,26 +38,26 @@ This will download and install Eclipse into `~/eclipse/spoofax-dev` with the rig
 ### Fixing Eclipse Settings
 Some Eclipse settings unfortunately have sub-optimal defaults. Go to the Eclipse preferences and set these options:
 
-- General
+- `#!gui General`
     - **Enable**: Keep next/previous editor, view and perspectives dialog open
-- General ‣ Startup and Shutdown
+- `#!gui General > Startup and Shutdown`
     - **Enable**: Refresh workspace on startup
-- General ‣ Workspace
+- `#!gui General > Workspace`
     - **Enable**: Refresh using native hooks or polling
-- Maven
+- `#!gui Maven`
     - **Enable**: Do not automatically update dependencies from remote repositories
     - **Enable**: Download Artifact Sources
     - **Enable**: Download Artifact JavaDoc
-- Maven ‣ Annotation Processing
+- `#!gui Maven > Annotation Processing`
     - **Enable**: Automatically configure JDT APT
-- Maven ‣ User Interface
+- `#!gui Maven > User Interface`
     - **Enable**: Open XML page in the POM editor by default
-- Run/Debug ‣ Launching
+- `#!gui Run/Debug > Launching`
     - **Disable**: Build (if required) before launching
 
 
 ### Developing
-Import the projects you’d like to develop. To import Java and language projects, use _Import ‣ Maven ‣ Existing Maven Projects_. Eclipse plugins are still imported with _Import ‣ General ‣ Existing Projects into Workspace_.
+Import the projects you’d like to develop. To import Java and language projects, use `#!gui Import > Maven > Existing Maven Projects`. Eclipse plugins are still imported with `#!gui Import > General > Existing Projects into Workspace`.
 
 
 ### Running
@@ -70,13 +70,13 @@ Some tricks:
 
 
 ### Troubleshooting
-If launching the guest Eclipse does not work due to a missing JavaSE-11, you need to register a Java 11 compatible JRE. Go to _Preferences_ ‣ _Java_ ‣ _Installed JREs_, and click the Add... button, and find the install directory of your Java 11 compatible JRE. For example, when you've installed Java 11 with SDKMAN, it may be at `~/.sdkman/candidates/java/11.0.13-tem`. 
+If launching the guest Eclipse does not work due to a missing JavaSE-11, you need to register a Java 11 compatible JRE. Go to `#!gui Preferences > Java > Installed JREs`, and click the `#!gui Add...` button, and find the install directory of your Java 11 compatible JRE. For example, when you've installed Java 11 with SDKMAN, it may be at `~/.sdkman/candidates/java/11.0.13-tem`. 
     
-If there are many errors in a project, try updating the Maven project. Right click the project and choose _Maven_ ‣ _Update Project..._, uncheck _Clean projects_ in the new dialog and press _OK_. This will update the project from the POM file, update any dependencies, and trigger a build. If this does not solve the problems, try it again but this time with _Clean projects_ checked. Note that if you clean a language project, it has to be rebuilt from the command-line. Restarting Eclipse and repeating these steps may also help.
+If there are many errors in a project, try updating the Maven project. Right click the project and choose `#!gui Maven > Update Project...`, uncheck `#!gui Clean projects` in the new dialog and press `#!gui OK`. This will update the project from the POM file, update any dependencies, and trigger a build. If this does not solve the problems, try it again but this time with `#!gui Clean projects` checked. Note that if you clean a language project, it has to be rebuilt from the command-line. Restarting Eclipse and repeating these steps may also help.
 
 Multiple projects can be updated by selecting multiple projects in the package/project explorer, or by checking projects in the update dialog.
 
-If you have particular trouble with `org.eclipse.*` plugins in the `MANIFEST.MF` file that do not resolve, try the following. Go to _Preferences_ ‣ _Plug-in Development_ ‣ _Target Platform_, most likely there will not be an active _Running Platform_ there. You can use _Add..._ to add a new one if there isn’t one already. Select the _Default_ option, click _Next_, then click _Finish_. Check the box next to the platform to activate it.
+If you have particular trouble with `org.eclipse.*` plugins in the `MANIFEST.MF` file that do not resolve, try the following. Go to `#!gui Preferences > Plug-in Development > Target Platform`, most likely there will not be an active _Running Platform_ there. You can use `#!gui Add...` to add a new one if there isn’t one already. Select the _Default_ option, click `#!gui Next`, then click `#!gui Finish`. Check the box next to the platform to activate it.
 
 
 ### Advanced: Developing from Scratch

@@ -93,7 +93,7 @@ The `-s` flag build Stratego/XT instead of downloading it, and `-t` skips the St
     Use `.\bd.bat build` to get a list of components available for building, and `.\bd.bat build --help` for help on all the command-line flags and switches.
 
 !!! warning ""
-    If you have opened a project in the repository in Eclipse, you **must turn off** _Project_ ‣ _Build Automatically_ in Eclipse, otherwise the Maven and Eclipse compilers will interfere and possibly fail the build. After the Maven build is finished, enable _Build Automatically_ again.
+    If you have opened a project in the repository in Eclipse, you **must turn off** `#!gui Project > Build Automatically` in Eclipse, otherwise the Maven and Eclipse compilers will interfere and possibly fail the build. After the Maven build is finished, enable `#!gui Build Automatically` again.
 
 
 ## Updating the Source Code
@@ -180,4 +180,4 @@ If updating or checking out a branch of submodule fails (because of unstaged or 
     Resetting and cleaning **deletes uncommitted and unpushed changes**, which can cause **permanent data loss**. Make sure all your changes are committed _and_ pushed!
 
 ### Weird Compilation Errors
-If you get any weird compilation errors during the command-line build, make sure that _Project_ ‣ _Build Automatically_ is turned off in Eclipse.
+If you get any weird compilation errors during the command-line build, make sure that `#!gui Project > Build Automatically` is turned off in Eclipse.

@@ -3,32 +3,32 @@
 To clean up the structure of a language specification project, we've made the following changes:
 
 * ESV
-    * Main ESV file must be at <span class='file'>editor/Main.esv</span>. If it does not exist, no packed ESV file will be generated.
-    * Packed ESV file: <span class='file'>target/metaborg/editor.esv.af</span>
+    * Main ESV file must be at `editor/Main.esv`. If it does not exist, no packed ESV file will be generated.
+    * Packed ESV file: `target/metaborg/editor.esv.af`
 * SDF
     * The RTG and signatures files are no longer generated for SDF3 projects, since SDF3 generates its own signatures.
     * The generated box pp files are no longer generated, and box pp files are no longer converted into pp.af files.
-    * Definition: <span class='file'>src-gen/syntax/[LanguageName].def</span>
-    * Permissive definition: <span class='file'>src-gen/syntax/[LanguageName]-permissive.def</span>
-    * Parenthesizer: <span class='file'>src-gen/pp/[LanguageName]-parenthesize.str</span>
-    * Parse table: <span class='file'>target/metaborg/sdf.tbl</span>
+    * Definition: `src-gen/syntax/[LanguageName].def`
+    * Permissive definition: `src-gen/syntax/[LanguageName]-permissive.def`
+    * Parenthesizer: `src-gen/pp/[LanguageName]-parenthesize.str`
+    * Parse table: `target/metaborg/sdf.tbl`
 * Stratego
-    * 'editor-common.generated' file: <span class='file'>src-gen/stratego/metaborg.str</span>
-    * Ctree: <span class='file'>target/metaborg/stratego.ctree</span>
-    * Generated Java files: <span class='file'>src-gen/stratego-java</span>
-    * JAR: <span class='file'>target/metaborg/stratego.jar</span>
-    * Java strategies: <span class='file'>src/main/strategies</span>
-    * Java strategies JAR: <span class='file'>target/metaborg/stratego-javastrat.jar</span>
-    * Build cache: <span class='file'>target/stratego-cache</span>
+    * 'editor-common.generated' file: `src-gen/stratego/metaborg.str`
+    * Ctree: `target/metaborg/stratego.ctree`
+    * Generated Java files: `src-gen/stratego-java`
+    * JAR: `target/metaborg/stratego.jar`
+    * Java strategies: `src/main/strategies`
+    * Java strategies JAR: `target/metaborg/stratego-javastrat.jar`
+    * Build cache: `target/stratego-cache`
 * DynSem
-    * Manual Java: <span class='file'>src/main/ds</span>
-    * Generated Java: <span class='file'>src-gen/ds-java</span>
+    * Manual Java: `src/main/ds`
+    * Generated Java: `src-gen/ds-java`
 * Other
-    * Pluto build cache: <span class='file'>target/pluto</span>
+    * Pluto build cache: `target/pluto`
 
 To migrate your project, make the following changes:
 
-* Change the file name of the main ESV file to <span class='file'>Main.esv</span>, and change its module to `Main`.
+* Change the file name of the main ESV file to `Main.esv`, and change its module to `Main`.
 * In the main ESV file:
     * Change the parse table:
     ```esv
@@ -56,13 +56,13 @@ To migrate your project, make the following changes:
     * If you're using SDF2 or an external definition file:
         * Instead of importing the signatures from `include/<langname>`, import them from `signatures/<langname>`.
 * If your project has Java strategies:
-    * Create the <span class='file'>src/main/strategies</span> directory.
-    * Move Java strategies from <span class='file'>editor/java</span> into the <span class='file'>src/main/strategies</span> directory. Be sure to preserve the existing Java package structure.
+    * Create the `src/main/strategies` directory.
+    * Move Java strategies from `editor/java` into the `src/main/strategies` directory. Be sure to preserve the existing Java package structure.
 * If your project has manual DynSem Java files:
-    * Create the <span class='file'>src/main/ds</span> directory.
-    * Move manual DynSem Java files from <span class='file'>editor/java</span> into the <span class='file'>src/main/ds</span> directory. Be sure to preserve the existing Java package structure.
-* Perform a Maven update by right clicking the project and choosing <span class='menuselection'>Maven ‣ Update Project...</span>. Enable <span class='guilabel'>Force Update of Snapshots/Releases</span> in the new window and press <span class='guilabel'>Ok</span>. This updates the Java source directories of the project.
-* If you are still using SDF2 instead of SDF3, add the following setting to the <span class='file'>metaborg.yaml</span> file:
+    * Create the `src/main/ds` directory.
+    * Move manual DynSem Java files from `editor/java` into the `src/main/ds` directory. Be sure to preserve the existing Java package structure.
+* Perform a Maven update by right clicking the project and choosing `#!gui Maven > Update Project...`. Enable `#!gui Force Update of Snapshots/Releases` in the new window and press `#!gui Ok`. This updates the Java source directories of the project.
+* If you are still using SDF2 instead of SDF3, add the following setting to the `metaborg.yaml` file:
 ```yaml
 language:
   sdf:
