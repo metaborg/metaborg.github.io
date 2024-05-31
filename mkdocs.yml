@@ -143,6 +143,7 @@ nav:
     - getting-started.md
   - Tutorials:
     - tutorials/index.md
+    - tutorials/start.md
   - How-Tos:
     - howtos/index.md
     - Installation:
