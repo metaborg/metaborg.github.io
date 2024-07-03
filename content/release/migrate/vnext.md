@@ -21,3 +21,5 @@ MissingDependencyException: Language for dependency org.metaborg:org.metaborg.me
 
 
 
+## Install Virtualenv
+To build Spoofax 2 as a developer, you need to install Python Virtualenv using `python3 -m pip install virtualenv`.

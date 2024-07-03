@@ -26,8 +26,13 @@ The following tools are required to build and develop Spoofax:
 
     During a build of Spoofax, Pip will install some Python dependencies into a virtual environment. No extra Python dependencies are required for this (with one small exception, see the note below). The latest version of Pip will automatically be installed inside the virtual environment.
 
-    !!! warning ""
-        Debian and derivatives (like Ubuntu) do not include the full standard library when installing Python ([bug 1290847](https://bugs.launchpad.net/ubuntu/+source/python3.4/+bug/1290847/+index?comments=all)), so you will need to install `python3-venv` to ensure the virtual environment can be created.
+
+??? summary "Python Virtualenv 20.21.0 or newer"
+    You need to install Python Virtualenv. For example:
+
+    ```shell
+    python3 -m pip install virtualenv
+    ```
 
 
 ??? summary "Maven 3.5.4 or newer (except Maven 3.6.1 and 3.6.2)"
