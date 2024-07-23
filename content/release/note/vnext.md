@@ -6,6 +6,11 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Fixes
 
+### Statix
+- `RuleUtil.inline` now inserts equalities for ascribed values
+- Rule names are now unique across files
+- List origins are now tracked, fixing spurious failure in NaBL2 solver
+
 ## Added
 
 ## Changes
