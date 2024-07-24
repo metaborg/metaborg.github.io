@@ -299,6 +299,7 @@ nav:
     - release/stable.md
     - release/develop.md
     - Release Notes:
+      - release/note/2.5.21.md
       - release/note/2.5.20.md
       - release/note/2.5.19.md
       - release/note/2.5.18.md
@@ -338,6 +339,7 @@ nav:
       - release/note/1.0.0.md
       - release/note/vnext.md
     - Migration Guides:
+      - release/migrate/2.5.21.md
       - release/migrate/2.5.15.md
       - release/migrate/2.5.10.md
       - release/migrate/2.5.5.md
