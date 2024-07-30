@@ -10,6 +10,4 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Changes
 
-- Removed all `javax.inject` annotations from the codebase, only `jakarta.inject` annotations remain.
-
 ### Dependencies
