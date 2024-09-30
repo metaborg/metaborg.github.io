@@ -43,17 +43,10 @@ The `-vm` path you should use in this case should be something like:
 
 
 ## Installing a custom JDK
-To install and use a custom JDK for Spoofax, we recommend using [SDKman](https://sdkman.io/).  However, only an x86 JDK is supported.  Therefore SDKman has to be configured to use x86 JDKs that are compatible with the Rosetta 2 emulation layer:
-
-1.  Edit the file `~/.sdkman/etc/config`.
-2.  Change the value of `sdkman_rosetta2_compatible` to `true` (it is `false` by default).
-3.  Save and close the file.
-4.  Restart your terminal to apply the changes.
-
-Now you can install a JDK.  We tested this with JDK 11 (recommended) but Java 8 and newer should work.  For example:
+To install and use a custom JDK for Spoofax, we recommend using [SDKman](https://sdkman.io/).  However, only an x86 JDK is supported.  Therefore SDKman has to be convinced to install x86 JDKs that are compatible with the Rosetta 2 emulation layer with a environment variable. We tested this with JDK 11 (recommended) but Java 8 and newer should work. For example:
 
 ```shell
-sdk install java 11.0.18-tem
+SDKMAN_PLATFORM=darwin sdk install java 11.0.18-tem
 ```
 
 !!! note ""
