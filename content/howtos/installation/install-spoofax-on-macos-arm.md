@@ -43,28 +43,11 @@ The `-vm` path you should use in this case should be something like:
 
 
 ## Installing a custom JDK
-To install and use a custom JDK for Spoofax, we recommend using [SDKman](https://sdkman.io/).  However, only an x86 JDK is supported.  Therefore SDKman has to be convinced to install x86 JDKs that are compatible with the Rosetta 2 emulation layer with a environment variable. We tested this with JDK 11 (recommended) but Java 8 and newer should work. For example:
-
-```shell
-SDKMAN_PLATFORM=darwin sdk install java 11.0.18-tem
-```
-
-!!! note ""
-    For Temurin, JDK 8 should be the lowest version of JDK that is listed.  If the lowest version of Temurin is JDK 11, then the above change to `sdkman_rosetta2_compatible=true` was not applied correctly or the terminal was not restarted.
+To install and use a custom JDK for Spoofax, we recommend using a [MacOS pkg installer](https://adoptium.net/en-GB/temurin/releases/?arch=x64&version=11&os=mac).  Note that only an x86 JDK is supported.  We tested this with JDK 11 (recommended) but Java 8 and newer should work.
 
 Once installed, the `-vm` path in the Eclipse installation should be something like:
 
 ```
 -vm
-/Users/<USERNAME>/.sdkman/candidates/java/11.0.18-tem/bin
+/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/bin/java
 ```
-
-Or alternatively, but perhaps less predictable, use whatever version is set as the _current_ default version of Java (using `sdk default java`):
-
-```
--vm
-/Users/<USERNAME>/.sdkman/candidates/java/current/bin
-```
-
-
-
