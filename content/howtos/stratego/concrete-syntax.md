@@ -108,9 +108,12 @@ Note that the constructor `FromTerm` indicates that productions represent anti-q
 Using anti-quotations might make the fragment of the target language quite verbose. Therefore, it is also possible to define variables as shortcuts to anti-quotations. For example, the productions below define variables to reference anti-quotations to `Type` fragments. That is, instead of reference to a Stratego variable `X` by using `~type:X`, one may name this variable `t_1` which corresponds to a variable for a non-terminal `Type`.
 
 ```sdf3
-variables
-  Type = "t_" [0-9\']* {prefer}
+context-free syntax
+  Type.meta-var = "t_" [0-9\']* {prefer}
 ```
+
+!!! note "This special `meta-var` constructor is a workaround for a bug in the `variables` section translation in the SDF3 compiler."
+
 
 The `prefer` annotation indicates that in case of an ambiguity, the variable production should be preferred.
 
