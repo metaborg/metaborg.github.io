@@ -87,7 +87,9 @@ To publish releases, you will need write access to the [`spoofax-releng`](https:
 
     4.  Figure out what the _current development version_ of Spoofax is, what the _next release version_ should be, and if doing a non-patch release, what the _next development version_ should be. The release script will change the current development version into the next release version, deploy that, and then change the current development version to the next development version, and commit that. Setting the next development version is optional.
 
-    5.  Execute the release script with the parameters you gathered:
+    5.  Make sure that `spoofax/org.metaborg.core/src/main/java/org/metaborg/core/MetaborgConstants.java` has the next release version in the `METABORG_VERSION` constant. Otherwise you'll release a new version of Spoofax that generates new projects with the wrong version!
+
+    6.  Execute the release script with the parameters you gathered:
 
         ```bash
         ./b --repo <release-repository> release \
