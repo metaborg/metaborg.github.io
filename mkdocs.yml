@@ -6,7 +6,7 @@ site_url: https://www.spoofax.dev/
 
 
 # Copyright
-copyright: "Copyright &copy; 2010-2024 Spoofax Team"
+copyright: "Copyright &copy; 2010-2025 Spoofax Team"
 
 
 # Repository
@@ -299,6 +299,7 @@ nav:
     - release/stable.md
     - release/develop.md
     - Release Notes:
+      - release/note/2.5.23.md
       - release/note/2.5.22.md
       - release/note/2.5.21.md
       - release/note/2.5.20.md
