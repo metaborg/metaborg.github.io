@@ -10,4 +10,6 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Changes
 
+- Changes to the Stratego runtime classes to support compiling static calls in Stratego to static JVM calls.
+
 ### Dependencies
