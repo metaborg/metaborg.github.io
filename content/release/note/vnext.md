@@ -6,6 +6,8 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 
 ## Fixes
 
+- The Stratego 2 libraries `strategolib` and `gpp` now properly publish in their `jar` packaging form as well as their `spoofax-language` packaging form. 
+
 ## Added
 
 ## Changes
@@ -13,3 +15,6 @@ See the corresponding [migration guide](../migrate/vnext.md) for migrating from 
 - Changes to the Stratego runtime classes to support compiling static calls in Stratego to static JVM calls.
 
 ### Dependencies
+
+<!-- {% from 'downloads.md' import downloads with context %}
+{{ downloads('2.5.21') }} -->
